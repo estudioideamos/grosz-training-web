@@ -137,7 +137,7 @@ export default function Home() {
       <section className="results" id="resultados">
         <div className="results-copy">
           <p className="kicker"><span></span> Trabajo real. Resultados reales.</p>
-          <h2>La prueba está<br /><em>en el proceso.</em></h2>
+          <h2><span>La prueba está</span><br /><em>en el proceso.</em></h2>
           <p>No vendemos atajos. Aplicamos un sistema claro, acompañamos cada etapa y dejamos que el resultado hable.</p>
           <a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Quiero lograr mi cambio <span>↗</span></a>
         </div>
