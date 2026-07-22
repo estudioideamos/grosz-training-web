@@ -3,6 +3,7 @@ import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { TrainingIcon, type TrainingIconName } from "./components/TrainingIcon";
 import { Marquee } from "./components/Marquee";
+import { ProcessCarousel } from "./components/ProcessCarousel";
 
 const whatsapp = "https://wa.me/5491160162831?text=Hola%20Grosz%20Training%2C%20quiero%20empezar%20mi%20plan";
 
@@ -137,7 +138,6 @@ export default function Home() {
             </svg>
             <div className="experience-orbit-center">
               <img src={`${basePath}/assets/mancuernas.svg`} alt="" />
-              <span>con vos</span>
             </div>
           </div>
         </div>
@@ -161,14 +161,16 @@ export default function Home() {
         </div>
         <div className="method-layout">
           <aside className="method-aside">
+            <div className="method-orbit" aria-hidden="true">
+              <svg className="method-orbit-ring" viewBox="0 0 200 200">
+                <defs><path id="method-orbit-path" d="M100 18a82 82 0 1 1-.01 0" /></defs>
+                <text textLength="490" lengthAdjust="spacing"><textPath href="#method-orbit-path">PROCESO GROSZ · CUATRO ETAPAS · UN SISTEMA · </textPath></text>
+              </svg>
+              <div className="method-orbit-center"><strong>04</strong><small>ETAPAS</small></div>
+            </div>
             <p className="method-lead">
               Construimos hábitos que duran. Cada decisión nace de tu punto de partida y se ajusta con tu progreso.
             </p>
-            <div className="method-orbit" aria-hidden="true">
-              <span>Proceso Grosz</span>
-              <strong>04</strong>
-              <small>etapas conectadas</small>
-            </div>
           </aside>
           <div className="method-core">
             <div className="principles">
@@ -182,17 +184,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="process-flow" aria-label="Las cuatro etapas del método Grosz">
-          {processSteps.map(([number, title, text, icon], index) => (
-            <article className="process-step" key={number}>
-              <div className="process-icon"><TrainingIcon name={icon} /></div>
-              <span>{number}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-              {index < processSteps.length - 1 && <i aria-hidden="true">→</i>}
-            </article>
-          ))}
-        </div>
+        <ProcessCarousel steps={processSteps} />
       </section>
 
       <section className="services-section" id="servicios">
@@ -256,7 +248,7 @@ export default function Home() {
       <section className="comparison-section" aria-labelledby="comparison-title">
         <div className="comparison-copy">
           <p className="kicker dark"><span></span> Compará el proceso</p>
-          <h2 id="comparison-title">Un cambio que podes <em>ver.</em></h2>
+          <h2 id="comparison-title">Un cambio<span className="comparison-title-line">que podes <em>ver.</em></span></h2>
           <p>Deslizá la barra para entender visualmente cómo cambia la composición corporal manteniendo exactamente la misma pose y encuadre.</p>
           <div className="comparison-facts" aria-label="Datos de la comparación">
             <div><TrainingIcon name="target" /><span><small>01</small>Misma identidad</span></div>
@@ -314,8 +306,8 @@ export default function Home() {
           <img className="founder-detail" src="assets/poster.jpg" alt="Cristian Grosz entrenando" />
           <div className="founder-orbit" aria-label="Cristian Grosz, atleta IFBB y fundador de Grosz Training Group">
             <svg className="founder-orbit-ring" viewBox="0 0 200 200" aria-hidden="true">
-              <defs><path id="founder-orbit-path" d="M100 14a86 86 0 1 1-.01 0" /></defs>
-              <text><textPath href="#founder-orbit-path">ATLETA IFBB · EXPERIENCIA REAL · METODO GROSZ · </textPath></text>
+              <defs><path id="founder-orbit-path" d="M100 15a85 85 0 1 1-.01 0" /></defs>
+              <text textLength="510" lengthAdjust="spacing"><textPath href="#founder-orbit-path">ATLETA IFBB · EXPERIENCIA REAL · METODO GROSZ · DISCIPLINA · </textPath></text>
             </svg>
             <div className="founder-orbit-center"><strong>GTG</strong><span>IFBB</span></div>
           </div>
