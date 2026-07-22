@@ -39,5 +39,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="es"><body className={`${bebasNeue.variable} ${openSans.variable}`}>{children}</body></html>;
+  return <html lang="es" className={`${bebasNeue.variable} ${openSans.variable}`}><body>{children}</body></html>;
 }
