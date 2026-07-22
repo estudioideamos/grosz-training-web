@@ -1,3 +1,7 @@
+import { BeforeAfter } from "./components/BeforeAfter";
+import { SiteFooter } from "./components/SiteFooter";
+import { TrainingIcon, type TrainingIconName } from "./components/TrainingIcon";
+
 const whatsapp = "https://wa.me/5491160162831?text=Hola%20Grosz%20Training%2C%20quiero%20empezar%20mi%20plan";
 
 const plans = [
@@ -46,13 +50,20 @@ const principles = [
   ["03", "Seguimiento", "No recibís un PDF y quedás solo: medimos, ajustamos y avanzamos con vos."],
 ];
 
-const services = [
-  ["01", "Entrenamiento a medida", "Una planificación específica para tu nivel, tus tiempos y el cuerpo que querés construir."],
-  ["02", "Alimentación aplicable", "Educación alimenticia y un plan claro, pensado para sostenerse fuera del gimnasio."],
-  ["03", "Suplementación deportiva", "Recomendaciones integradas al objetivo, al entrenamiento y a tu alimentación."],
-  ["04", "Seguimiento diario", "Soporte por WhatsApp, motivación, respuestas y ajustes durante todo el proceso."],
-  ["05", "Evaluación real", "Chequeos mensuales para medir grasa, masa muscular, rendimiento y evolución."],
-  ["06", "Online o presencial", "La misma metodología Grosz, estés donde estés o vengas a una consulta en nuestras oficinas."],
+const services: Array<[string, string, string, TrainingIconName]> = [
+  ["01", "Entrenamiento a medida", "Una planificación específica para tu nivel, tus tiempos y el cuerpo que querés construir.", "training"],
+  ["02", "Alimentación aplicable", "Educación alimenticia y un plan claro, pensado para sostenerse fuera del gimnasio.", "nutrition"],
+  ["03", "Suplementación deportiva", "Recomendaciones integradas al objetivo, al entrenamiento y a tu alimentación.", "capsule"],
+  ["04", "Seguimiento diario", "Soporte por WhatsApp, motivación, respuestas y ajustes durante todo el proceso.", "chat"],
+  ["05", "Evaluación real", "Chequeos mensuales para medir grasa, masa muscular, rendimiento y evolución.", "chart"],
+  ["06", "Online o presencial", "La misma metodología Grosz, estés donde estés o vengas a una consulta en nuestras oficinas.", "location"],
+];
+
+const processSteps: Array<[string, string, string, TrainingIconName]> = [
+  ["01", "Evaluamos", "Punto de partida, objetivo y contexto.", "search"],
+  ["02", "Planificamos", "Nutrición y entrenamiento integrados.", "plan"],
+  ["03", "Entrenamos", "Ejecución clara, progresiva y medible.", "training"],
+  ["04", "Ajustamos", "Chequeos mensuales según tu evolución.", "adjust"],
 ];
 
 const values = [
@@ -85,6 +96,7 @@ const articles = [
 ];
 
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <main>
       <header className="nav-shell">
@@ -96,6 +108,7 @@ export default function Home() {
           <a href="#servicios">Servicios</a>
           <a href="#resultados">Resultados</a>
           <a href="#planes">Planes</a>
+          <a href={`${basePath}/contacto/`}>Contacto</a>
         </nav>
         <a className="nav-cta" href={whatsapp} target="_blank" rel="noreferrer">
           Empezá hoy <span aria-hidden="true">↗</span>
@@ -109,6 +122,7 @@ export default function Home() {
             <a href="#planes">Planes</a>
             <a href="#cristian">Cristian</a>
             <a href="#faq">Preguntas</a>
+            <a href={`${basePath}/contacto/`}>Contacto</a>
             <a href={whatsapp} target="_blank" rel="noreferrer">Quiero empezar ↗</a>
           </nav>
         </details>
@@ -179,6 +193,17 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <div className="process-flow" aria-label="Las cuatro etapas del método Grosz">
+          {processSteps.map(([number, title, text, icon], index) => (
+            <article className="process-step" key={number}>
+              <div className="process-icon"><TrainingIcon name={icon} /></div>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              {index < processSteps.length - 1 && <i aria-hidden="true">→</i>}
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="services-section" id="servicios">
@@ -188,9 +213,9 @@ export default function Home() {
           <p>Un sistema completo para entrenar con intención, comer con criterio y avanzar con alguien del otro lado.</p>
         </div>
         <div className="service-grid">
-          {services.map(([number, title, text]) => (
+          {services.map(([number, title, text, icon]) => (
             <article className="service-card" key={number}>
-              <span>{number}</span>
+              <div className="service-card-top"><span>{number}</span><div className="service-icon"><TrainingIcon name={icon} /></div></div>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
@@ -218,6 +243,21 @@ export default function Home() {
             </figure>
           ))}
         </div>
+      </section>
+
+      <section className="comparison-section" aria-labelledby="comparison-title">
+        <div className="comparison-copy">
+          <p className="kicker dark"><span></span> Compará el proceso</p>
+          <h2 id="comparison-title">Un cambio que podés <em>ver.</em></h2>
+          <p>Deslizá la barra para comparar el antes y el después de una transformación real acompañada por Grosz Training.</p>
+          <div className="comparison-facts" aria-label="Datos de la comparación">
+            <div><TrainingIcon name="target" /><span><small>01</small>Misma persona</span></div>
+            <div><TrainingIcon name="chart" /><span><small>02</small>Proceso real</span></div>
+            <div><TrainingIcon name="adjust" /><span><small>03</small>Seguimiento</span></div>
+          </div>
+          <small className="comparison-note">Cada proceso es individual. Los resultados dependen del punto de partida, la constancia y el seguimiento.</small>
+        </div>
+        <BeforeAfter />
       </section>
 
       <section className="quote-section">
@@ -331,25 +371,7 @@ export default function Home() {
         <a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Quiero empezar ahora <span>↗</span></a>
       </section>
 
-      <footer>
-        <div className="footer-main">
-          <img src="assets/grosz-logo.png" alt="Grosz Training Group" />
-          <p>Resultados reales a través de entrenamiento, nutrición y seguimiento personalizado.</p>
-          <div className="footer-contact">
-            <a href="tel:+5491160162831">+54 9 11 6016-2831</a>
-            <a href="mailto:contacto@grosztraining.com.ar">contacto@grosztraining.com.ar</a>
-            <a href="https://www.instagram.com/groszcris/" target="_blank" rel="noreferrer">Instagram Cristian ↗</a>
-            <a href="https://youtube.com/@groszteam" target="_blank" rel="noreferrer">YouTube Grosz ↗</a>
-            <a href="https://www.tiktok.com/@groszcris" target="_blank" rel="noreferrer">TikTok ↗</a>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© 2026 Grosz Training Group</span>
-          <a href="https://www.instagram.com/grosztraininggroup/" target="_blank" rel="noreferrer">Instagram ↗</a>
-          <a href="https://www.youtube.com/@cristiangrosz" target="_blank" rel="noreferrer">YouTube ↗</a>
-          <a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp ↗</a>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <a className="floating-whatsapp" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Consultar por WhatsApp">
         <span>WA</span><b>Hablemos</b>
