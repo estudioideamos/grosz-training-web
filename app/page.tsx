@@ -68,12 +68,12 @@ const processSteps: Array<[string, string, string, TrainingIconName]> = [
   ["04", "Ajustamos", "Chequeos mensuales según tu evolución.", "adjust"],
 ];
 
-const values = [
-  "Trabajo en equipo",
-  "Planes específicos",
-  "Educación alimenticia",
-  "Sistemas avanzados",
-  "Resultados reales",
+const values: Array<{ title: string; text: string; icon: TrainingIconName }> = [
+  { title: "Trabajo en equipo", text: "Entrenador y alumno avanzan con un objetivo compartido y comunicación constante.", icon: "chat" },
+  { title: "Planes específicos", text: "Cada decisión responde a tu cuerpo, tu contexto y el resultado que buscás.", icon: "target" },
+  { title: "Educación alimenticia", text: "Entender qué comés te permite sostener el cambio más allá de una dieta.", icon: "nutrition" },
+  { title: "Sistemas avanzados", text: "Medimos, registramos y ajustamos con método para no depender de la improvisación.", icon: "adjust" },
+  { title: "Resultados reales", text: "El progreso se vuelve visible cuando el plan, la ejecución y la constancia se alinean.", icon: "chart" },
 ];
 
 const articles = [
@@ -150,29 +150,38 @@ export default function Home() {
           <h2>No es una rutina.<br /><em>Es un sistema.</em></h2>
         </div>
         <div className="method-layout">
-          <p className="method-lead">
-            Construimos hábitos que duran. Cada decisión nace de tu punto de partida y se ajusta con tu progreso.
-          </p>
-          <div className="principles">
-            {principles.map(([n, title, text]) => (
-              <article className="principle" key={n}>
-                <span>{n}</span>
-                <div><h3>{title}</h3><p>{text}</p></div>
-                <i aria-hidden="true">↗</i>
-              </article>
-            ))}
+          <aside className="method-aside">
+            <p className="method-lead">
+              Construimos hábitos que duran. Cada decisión nace de tu punto de partida y se ajusta con tu progreso.
+            </p>
+            <div className="method-orbit" aria-hidden="true">
+              <span>Proceso Grosz</span>
+              <strong>04</strong>
+              <small>etapas conectadas</small>
+            </div>
+          </aside>
+          <div className="method-core">
+            <div className="principles">
+              {principles.map(([n, title, text]) => (
+                <article className="principle" key={n}>
+                  <span>{n}</span>
+                  <div><h3>{title}</h3><p>{text}</p></div>
+                  <i aria-hidden="true">↗</i>
+                </article>
+              ))}
+            </div>
+            <div className="process-flow" aria-label="Las cuatro etapas del método Grosz">
+              {processSteps.map(([number, title, text, icon], index) => (
+                <article className="process-step" key={number}>
+                  <div className="process-icon"><TrainingIcon name={icon} /></div>
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                  {index < processSteps.length - 1 && <i aria-hidden="true">→</i>}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="process-flow" aria-label="Las cuatro etapas del método Grosz">
-          {processSteps.map(([number, title, text, icon], index) => (
-            <article className="process-step" key={number}>
-              <div className="process-icon"><TrainingIcon name={icon} /></div>
-              <span>{number}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-              {index < processSteps.length - 1 && <i aria-hidden="true">→</i>}
-            </article>
-          ))}
         </div>
       </section>
 
@@ -271,14 +280,19 @@ export default function Home() {
         <div className="plan-grid">
           {plans.map((plan) => (
             <article className={`plan-card ${plan.featured ? "featured" : ""}`} key={plan.number}>
-              {plan.featured && <span className="popular">Más elegido</span>}
-              <span className="plan-number">{plan.number}</span>
-              <p className="plan-eyebrow">{plan.eyebrow}</p>
-              <h3>{plan.title}</h3>
-              <ul>
-                {plan.features.map(feature => <li key={feature}><span>✓</span>{feature}</li>)}
-              </ul>
-              <a href={whatsapp} target="_blank" rel="noreferrer">Consultar este plan <span>↗</span></a>
+              <div className="plan-poster">
+                {plan.featured && <span className="popular">Más elegido</span>}
+                <span className="plan-number">Modalidad {plan.number}</span>
+                <p className="plan-eyebrow">{plan.eyebrow}</p>
+                <h3>{plan.title}</h3>
+              </div>
+              <div className="plan-details">
+                <span className="plan-includes">Incluye</span>
+                <ul>
+                  {plan.features.map(feature => <li key={feature}><span>✓</span>{feature}</li>)}
+                </ul>
+                <a href={whatsapp} target="_blank" rel="noreferrer">Consultar este plan <span>↗</span></a>
+              </div>
             </article>
           ))}
         </div>
@@ -305,8 +319,24 @@ export default function Home() {
       </section>
 
       <section className="values-band" aria-label="Valores Grosz Training">
-        <p className="kicker"><span></span> Nuestros valores</p>
-        <div>{values.map((value, index) => <p key={value}><span>0{index + 1}</span>{value}</p>)}</div>
+        <div className="values-heading">
+          <div>
+            <p className="kicker"><span></span> Nuestros valores</p>
+            <h2>Lo que no<br /><em>negociamos.</em></h2>
+          </div>
+          <p>Principios simples, aplicados todos los días. La base para construir un proceso serio y un resultado que se sostenga.</p>
+        </div>
+        <div className="values-grid">
+          {values.map((value, index) => (
+            <article className="value-card" key={value.title}>
+              <span>0{index + 1}</span>
+              <div className="value-icon"><TrainingIcon name={value.icon} /></div>
+              <h3>{value.title}</h3>
+              <p>{value.text}</p>
+              <i aria-hidden="true">↗</i>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="faq section" id="faq">

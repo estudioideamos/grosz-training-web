@@ -1,5 +1,3 @@
-const whatsapp = "https://wa.me/5491160162831?text=Hola%20Grosz%20Training%2C%20quiero%20empezar%20mi%20plan";
-
 const groups = [
   {
     title: "Grosz en redes",
@@ -54,10 +52,9 @@ export function SiteFooter() {
       </div>
       <div className="footer-bottom">
         <span>© 2026 Grosz Training Group</span>
-        <a href={`${basePath}/`}>Inicio</a>
-        <a href={`${basePath}/resultados/`}>Resultados</a>
-        <a href={`${basePath}/contacto/`}>Contacto</a>
-        <a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp ↗</a>
+        <a className="footer-credit" href="https://ideamos.com.ar" target="_blank" rel="noreferrer">
+          Diseñado para rendir. <strong>Construido por Estudio Ideamos</strong> <i>↗</i>
+        </a>
       </div>
     </footer>
   );
