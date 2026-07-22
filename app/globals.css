@@ -58,7 +58,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .text-link { display: inline-flex; gap: 20px; align-items: center; font-family: var(--font-ui); font-size: 13px; text-transform: uppercase; letter-spacing: .09em; padding-bottom: 7px; border-bottom: 1px solid rgba(255,255,255,.4); font-weight: 700; }
 .text-link.light { color: white; }
 .hero-media { position: relative; min-width: 0; overflow: hidden; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% center; filter: grayscale(1) contrast(1.07); transform: scale(1.04); animation: heroReveal 1.8s cubic-bezier(.16,.8,.2,1) both, heroDrift 14s 1.8s ease-in-out infinite alternate; }
+.hero-media > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% center; filter: grayscale(1) contrast(1.07); transform: scale(1.04); animation: heroReveal 1.8s cubic-bezier(.16,.8,.2,1) both, heroDrift 14s 1.8s ease-in-out infinite alternate; }
 .hero-media-shade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--black), transparent 38%), linear-gradient(0deg, rgba(0,0,0,.55), transparent 45%); }
 .vertical-word { position: absolute; right: -14px; top: 50%; transform: rotate(90deg) translateX(50%); transform-origin: right center; margin: 0; font-size: 10px; letter-spacing: .42em; opacity: .6; }
 .experience-orbit { position: absolute; z-index: 3; bottom: 26px; left: 26px; width: 208px; aspect-ratio: 1; border-radius: 50%; background: var(--red); color: var(--black); display: grid; place-items: center; box-shadow: 0 22px 65px rgba(0,0,0,.4); animation: cardReveal .9s .9s cubic-bezier(.16,.8,.2,1) both; }
@@ -481,7 +481,7 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
   .button { width: 100%; max-width: 360px; }
   .text-link { width: max-content; }
   .hero-media { position: absolute; inset: 72px 0 0; }
-  .hero-media img { object-position: 56% center; }
+  .hero-media > img { object-position: 56% center; }
   .hero-media-shade { background: linear-gradient(0deg, #080808 17%, rgba(8,8,8,.68) 57%, rgba(8,8,8,.2)), linear-gradient(90deg, rgba(8,8,8,.5), transparent); }
   .experience-orbit { width: 132px; left: auto; right: 18px; bottom: auto; top: 96px; }
   .experience-orbit-center { width: 66px; }
