@@ -37,7 +37,7 @@ export function SiteFooter() {
       <div className="footer-topline"><span>Grosz Training Group</span><b>Todo el ecosistema. Un solo método.</b></div>
       <div className="footer-main footer-expanded">
         <div className="footer-brand-column">
-          <img src={`${basePath}/assets/grosz-logo.png`} alt="Grosz Training Group" />
+          <img src={`${basePath}/assets/grosz-logo.png`} alt="Grosz Training Group" loading="lazy" decoding="async" />
           <p>Resultados reales a través de entrenamiento, nutrición y seguimiento personalizado.</p>
           <a className="footer-contact-cta" href={`${basePath}/contacto/`}>Contacto <span>↗</span></a>
         </div>

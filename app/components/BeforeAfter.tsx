@@ -5,7 +5,7 @@ import { useState, type CSSProperties } from "react";
 export function BeforeAfter() {
   const [position, setPosition] = useState(52);
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const style = { "--reveal": `${position}%`, "--comparison-image": `url(${basePath}/assets/comparacion-generada-v2.png)` } as CSSProperties;
+  const style = { "--reveal": `${position}%`, "--comparison-image": `url(${basePath}/assets/comparacion-generada-v2.webp)` } as CSSProperties;
 
   return (
     <div className="before-after" style={style}>

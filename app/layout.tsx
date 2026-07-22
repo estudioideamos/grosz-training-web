@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     description: "Entrenamiento, alimentación y seguimiento real para alcanzar tu próximo nivel.",
     type: "website",
     locale: "es_AR",
-    images: [{ url: "og.png", width: 1732, height: 909, alt: "Grosz Training — Tu cambio, con método" }],
+    images: [{ url: "og.webp", width: 1731, height: 909, alt: "Grosz Training — Tu cambio, con método" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Grosz Training | Tu cambio, con método",
     description: "Entrenamiento, alimentación y seguimiento real para alcanzar tu próximo nivel.",
-    images: ["og.png"],
+    images: ["og.webp"],
   },
 };
 

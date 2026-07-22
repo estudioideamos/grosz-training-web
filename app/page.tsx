@@ -124,7 +124,7 @@ export default function Home() {
         </div>
 
         <div className="hero-media">
-          <img src="assets/gym.jpg" alt="Cristian Grosz y el equipo de Grosz Training" />
+          <img src="assets/gym.webp" alt="Cristian Grosz y el equipo de Grosz Training" fetchPriority="high" decoding="async" />
           <div className="hero-media-shade"></div>
           <p className="vertical-word" aria-hidden="true">DISCIPLINA</p>
           <div className="experience-orbit" aria-label="Plan cien por ciento personalizado a tu objetivo">
@@ -206,15 +206,15 @@ export default function Home() {
 
       <section className="training-mosaic" aria-label="Entrenamiento y comunidad Grosz">
         <figure className="mosaic-wide">
-          <img src="assets/poster.jpg" alt="Entrenamiento de fuerza en Grosz Training" />
+          <img src="assets/poster.webp" alt="Entrenamiento de fuerza en Grosz Training" loading="lazy" decoding="async" />
           <figcaption><span>01</span><strong>Entrena con intencion.</strong><i>Fuerza</i></figcaption>
         </figure>
         <figure className="mosaic-tall">
-          <img src="assets/footer.jpg" alt="Entrenamiento personalizado de una alumna Grosz" />
+          <img src="assets/footer.webp" alt="Entrenamiento personalizado de una alumna Grosz" loading="lazy" decoding="async" />
           <figcaption><span>02</span><strong>Cada repeticion cuenta.</strong><i>Tecnica</i></figcaption>
         </figure>
         <figure className="mosaic-square">
-          <img src="assets/cambio-hero.jpg" alt="Cristian Grosz, entrenador y atleta IFBB" />
+          <img src="assets/cambio-hero.webp" alt="Cristian Grosz, entrenador y atleta IFBB" loading="lazy" decoding="async" />
           <figcaption><span>03</span><strong>Experiencia aplicada.</strong><i>Metodo</i></figcaption>
         </figure>
         <div className="mosaic-statement"><small>Grosz Training Group</small><p>Mas que entrenar.<br /><em>Construir.</em></p></div>
@@ -232,13 +232,13 @@ export default function Home() {
         </div>
         <div className="transformations" aria-label="Transformaciones reales de alumnos Grosz">
           {[
-            ["assets/cambio-01.jpg", "Cambio real de alumno Grosz, frente y espalda"],
-            ["assets/cambio-02.jpg", "Evolución física real de alumno Grosz"],
-            ["assets/cambio-03.jpg", "Transformación real con el método Grosz"],
-            ["assets/cambio-04.jpg", "Resultado real de entrenamiento personalizado"],
+            ["assets/cambio-01.webp", "Cambio real de alumno Grosz, frente y espalda"],
+            ["assets/cambio-02.webp", "Evolución física real de alumno Grosz"],
+            ["assets/cambio-03.webp", "Transformación real con el método Grosz"],
+            ["assets/cambio-04.webp", "Resultado real de entrenamiento personalizado"],
           ].map(([src, alt], index) => (
             <figure key={src}>
-              <img src={src} alt={alt} />
+              <img src={src} alt={alt} loading="lazy" decoding="async" />
               <figcaption><span>CASO {String(index + 1).padStart(2, "0")}</span><b>DESLIZÁ →</b></figcaption>
             </figure>
           ))}
@@ -302,8 +302,8 @@ export default function Home() {
 
       <section className="founder" id="cristian">
         <div className="founder-visual">
-          <img className="founder-main" src="assets/cambio-hero.jpg" alt="Cristian Grosz, atleta IFBB y entrenador personal" />
-          <img className="founder-detail" src="assets/poster.jpg" alt="Cristian Grosz entrenando" />
+          <img className="founder-main" src="assets/cambio-hero.webp" alt="Cristian Grosz, atleta IFBB y entrenador personal" loading="lazy" decoding="async" />
+          <img className="founder-detail" src="assets/poster.webp" alt="Cristian Grosz entrenando" loading="lazy" decoding="async" />
           <div className="founder-orbit" aria-label="Cristian Grosz, atleta IFBB y fundador de Grosz Training Group">
             <svg className="founder-orbit-ring" viewBox="0 0 200 200" aria-hidden="true">
               <defs><path id="founder-orbit-path" d="M100 15a85 85 0 1 1-.01 0" /></defs>
@@ -383,7 +383,7 @@ export default function Home() {
         <div className="article-grid">
           {articles.map((article, index) => (
             <a className="article-card" href={article.href} target="_blank" rel="noreferrer" key={article.title}>
-              <figure><img src={article.image} alt="" /></figure>
+              <figure><img src={article.image} alt="" loading="lazy" decoding="async" /></figure>
               <span>0{index + 1} / {article.category}</span>
               <h3>{article.title}</h3>
               <b>Leer artículo ↗</b>

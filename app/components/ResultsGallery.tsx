@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 
 const results = [
   ...Array.from({ length: 7 }, (_, index) => ({
-    src: `resultado-original-${String(index + 1).padStart(2, "0")}.jpeg`,
+    src: `resultado-original-${String(index + 1).padStart(2, "0")}.webp`,
     source: "Archivo original Grosz",
   })),
   ...Array.from({ length: 4 }, (_, index) => ({
-    src: `cambio-0${index + 1}.jpg`,
+    src: `cambio-0${index + 1}.webp`,
     source: "Proceso Grosz Training",
   })),
 ];
@@ -33,7 +33,7 @@ export function ResultsGallery() {
         {results.map((result, index) => (
           <button className="result-gallery-card" type="button" onClick={() => setActive(index)} key={result.src} aria-label={`Ampliar caso ${index + 1}`}>
             <figure>
-              <img src={`${basePath}/assets/${result.src}`} alt={`Transformación Grosz Training, caso ${String(index + 1).padStart(2, "0")}`} />
+              <img src={`${basePath}/assets/${result.src}`} alt={`Transformación Grosz Training, caso ${String(index + 1).padStart(2, "0")}`} loading="lazy" decoding="async" />
               <figcaption><span>Caso {String(index + 1).padStart(2, "0")}</span><b>{result.source}</b><i>Ampliar ↗</i></figcaption>
             </figure>
           </button>
@@ -44,7 +44,7 @@ export function ResultsGallery() {
           <button className="lightbox-close" type="button" onClick={() => setActive(null)} aria-label="Cerrar">×</button>
           <button className="lightbox-arrow prev" type="button" onClick={(event) => { event.stopPropagation(); setActive((active - 1 + results.length) % results.length); }} aria-label="Caso anterior">←</button>
           <figure onClick={(event) => event.stopPropagation()}>
-            <img src={`${basePath}/assets/${results[active].src}`} alt={`Transformación Grosz Training, caso ${active + 1}`} />
+            <img src={`${basePath}/assets/${results[active].src}`} alt={`Transformación Grosz Training, caso ${active + 1}`} decoding="async" />
             <figcaption><span>Caso {String(active + 1).padStart(2, "0")}</span><b>{results[active].source}</b></figcaption>
           </figure>
           <button className="lightbox-arrow next" type="button" onClick={(event) => { event.stopPropagation(); setActive((active + 1) % results.length); }} aria-label="Caso siguiente">→</button>
