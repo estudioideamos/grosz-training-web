@@ -1,6 +1,8 @@
 import { BeforeAfter } from "./components/BeforeAfter";
 import { SiteFooter } from "./components/SiteFooter";
+import { SiteHeader } from "./components/SiteHeader";
 import { TrainingIcon, type TrainingIconName } from "./components/TrainingIcon";
+import { Marquee } from "./components/Marquee";
 
 const whatsapp = "https://wa.me/5491160162831?text=Hola%20Grosz%20Training%2C%20quiero%20empezar%20mi%20plan";
 
@@ -99,34 +101,7 @@ export default function Home() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <main>
-      <header className="nav-shell">
-        <a className="brand" href="#inicio" aria-label="Grosz Training, inicio">
-          <img src="assets/grosz-logo.png" alt="Grosz Training Group" />
-        </a>
-        <nav className="desktop-nav" aria-label="Navegación principal">
-          <a href="#metodo">Método</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#resultados">Resultados</a>
-          <a href="#planes">Planes</a>
-          <a href={`${basePath}/contacto/`}>Contacto</a>
-        </nav>
-        <a className="nav-cta" href={whatsapp} target="_blank" rel="noreferrer">
-          Empezá hoy <span aria-hidden="true">↗</span>
-        </a>
-        <details className="mobile-menu">
-          <summary aria-label="Abrir menú"><span></span><span></span></summary>
-          <nav aria-label="Navegación mobile">
-            <a href="#metodo">Método</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#resultados">Resultados</a>
-            <a href="#planes">Planes</a>
-            <a href="#cristian">Cristian</a>
-            <a href="#faq">Preguntas</a>
-            <a href={`${basePath}/contacto/`}>Contacto</a>
-            <a href={whatsapp} target="_blank" rel="noreferrer">Quiero empezar ↗</a>
-          </nav>
-        </details>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="inicio">
         <div className="hero-noise" aria-hidden="true"></div>
@@ -160,12 +135,7 @@ export default function Home() {
         <div className="hero-index" aria-hidden="true">01 — 06</div>
       </section>
 
-      <div className="ticker" aria-label="Servicios incluidos">
-        <div className="ticker-track">
-          <span>ENTRENAMIENTO PERSONALIZADO</span><b>✦</b><span>NUTRICIÓN</span><b>✦</b><span>SEGUIMIENTO REAL</span><b>✦</b>
-          <span>ENTRENAMIENTO PERSONALIZADO</span><b>✦</b><span>NUTRICIÓN</span><b>✦</b><span>SEGUIMIENTO REAL</span><b>✦</b>
-        </div>
-      </div>
+      <Marquee />
 
       <section className="authority-strip" aria-label="Credenciales Grosz Training">
         <p><span>Dirección</span><strong>Cristian Grosz</strong></p>
@@ -223,12 +193,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="training-mosaic" aria-label="Entrenamiento y comunidad Grosz">
+        <figure className="mosaic-wide">
+          <img src="assets/poster.jpg" alt="Entrenamiento de fuerza en Grosz Training" />
+          <figcaption><span>01</span><strong>Entrená con intención.</strong><i>Fuerza</i></figcaption>
+        </figure>
+        <figure className="mosaic-tall">
+          <img src="assets/footer.jpg" alt="Entrenamiento personalizado de una alumna Grosz" />
+          <figcaption><span>02</span><strong>Cada repetición cuenta.</strong><i>Técnica</i></figcaption>
+        </figure>
+        <figure className="mosaic-square">
+          <img src="assets/cambio-hero.jpg" alt="Cristian Grosz, entrenador y atleta IFBB" />
+          <figcaption><span>03</span><strong>Experiencia aplicada.</strong><i>Método</i></figcaption>
+        </figure>
+        <div className="mosaic-statement"><small>Grosz Training Group</small><p>Más que entrenar.<br /><em>Construir.</em></p></div>
+      </section>
+
       <section className="results" id="resultados">
         <div className="results-copy">
           <p className="kicker"><span></span> Trabajo real. Resultados reales.</p>
           <h2><span>La prueba está</span><br /><em>en el proceso.</em></h2>
           <p>No vendemos atajos. Aplicamos un sistema claro, acompañamos cada etapa y dejamos que el resultado hable.</p>
-          <a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Quiero lograr mi cambio <span>↗</span></a>
+          <div className="results-actions">
+            <a className="button button-light" href={`${basePath}/resultados/`}>Ver todos los casos <span>↗</span></a>
+            <a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Quiero lograr mi cambio <span>↗</span></a>
+          </div>
         </div>
         <div className="transformations" aria-label="Transformaciones reales de alumnos Grosz">
           {[
@@ -249,13 +238,13 @@ export default function Home() {
         <div className="comparison-copy">
           <p className="kicker dark"><span></span> Compará el proceso</p>
           <h2 id="comparison-title">Un cambio que podés <em>ver.</em></h2>
-          <p>Deslizá la barra para comparar el antes y el después de una transformación real acompañada por Grosz Training.</p>
+          <p>Deslizá la barra para entender visualmente cómo cambia la composición corporal manteniendo exactamente la misma pose y encuadre.</p>
           <div className="comparison-facts" aria-label="Datos de la comparación">
-            <div><TrainingIcon name="target" /><span><small>01</small>Misma persona</span></div>
-            <div><TrainingIcon name="chart" /><span><small>02</small>Proceso real</span></div>
-            <div><TrainingIcon name="adjust" /><span><small>03</small>Seguimiento</span></div>
+            <div><TrainingIcon name="target" /><span><small>01</small>Misma identidad</span></div>
+            <div><TrainingIcon name="training" /><span><small>02</small>Misma pose</span></div>
+            <div><TrainingIcon name="adjust" /><span><small>03</small>Misma cámara</span></div>
           </div>
-          <small className="comparison-note">Cada proceso es individual. Los resultados dependen del punto de partida, la constancia y el seguimiento.</small>
+          <small className="comparison-note">Visual generado con fines ilustrativos; no corresponde a un caso real. Cada proceso es individual y sus resultados dependen del punto de partida, la constancia y el seguimiento.</small>
         </div>
         <BeforeAfter />
       </section>
@@ -370,6 +359,8 @@ export default function Home() {
         <h2>El segundo mejor<br />es <em>hoy.</em></h2>
         <a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Quiero empezar ahora <span>↗</span></a>
       </section>
+
+      <Marquee alternate />
 
       <SiteFooter />
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "../components/ContactForm";
 import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Contacto | Grosz Training",
@@ -8,13 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function ContactoPage() {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <main className="contact-page">
-      <header className="contact-nav">
-        <a className="brand" href={`${basePath}/`}><img src={`${basePath}/assets/grosz-logo.png`} alt="Grosz Training Group" /></a>
-        <a href={`${basePath}/`}>Volver al sitio <span>←</span></a>
-      </header>
+      <SiteHeader subpage />
       <section className="contact-hero">
         <div className="contact-heading">
           <p className="kicker"><span></span> Empecemos por tu objetivo</p>
@@ -34,4 +31,3 @@ export default function ContactoPage() {
     </main>
   );
 }
-

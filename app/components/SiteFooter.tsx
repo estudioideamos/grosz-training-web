@@ -50,21 +50,15 @@ export function SiteFooter() {
               {group.links.map(([label, href]) => <a href={href} target="_blank" rel="noreferrer" key={label}>{label}<span>↗</span></a>)}
             </div>
           ))}
-          <div className="footer-group footer-direct">
-            <h3>Hablemos</h3>
-            <a href="tel:+5491160162831">+54 9 11 6016-2831<span>↗</span></a>
-            <a href="mailto:contacto@grosztraining.com.ar">contacto@grosztraining.com.ar<span>↗</span></a>
-            <a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp directo<span>↗</span></a>
-          </div>
         </div>
       </div>
       <div className="footer-bottom">
         <span>© 2026 Grosz Training Group</span>
         <a href={`${basePath}/`}>Inicio</a>
+        <a href={`${basePath}/resultados/`}>Resultados</a>
         <a href={`${basePath}/contacto/`}>Contacto</a>
         <a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp ↗</a>
       </div>
     </footer>
   );
 }
-

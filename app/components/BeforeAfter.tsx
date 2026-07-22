@@ -5,12 +5,12 @@ import { useState, type CSSProperties } from "react";
 export function BeforeAfter() {
   const [position, setPosition] = useState(52);
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const style = { "--reveal": `${position}%`, "--comparison-image": `url(${basePath}/assets/cambio-03.jpg)` } as CSSProperties;
+  const style = { "--reveal": `${position}%`, "--comparison-image": `url(${basePath}/assets/comparacion-generada-v2.png)` } as CSSProperties;
 
   return (
     <div className="before-after" style={style}>
-      <div className="comparison-image comparison-before" role="img" aria-label="Antes del proceso Grosz"></div>
-      <div className="comparison-image comparison-after" role="img" aria-label="Después del proceso Grosz"></div>
+      <div className="comparison-image comparison-before" role="img" aria-label="Representación visual del cuerpo antes del proceso"></div>
+      <div className="comparison-image comparison-after" role="img" aria-label="Representación visual del cuerpo después del proceso"></div>
       <div className="comparison-divider" aria-hidden="true"><span>↔</span></div>
       <span className="comparison-label before">Antes</span>
       <span className="comparison-label after">Después</span>
