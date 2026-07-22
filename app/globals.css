@@ -107,12 +107,9 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .principle h3 { margin: -5px 0 8px; font: 700 38px var(--font-display); text-transform: uppercase; letter-spacing: .005em; }
 .principle p { margin: 0; max-width: 560px; color: rgba(0,0,0,.62); font-size: 18px; font-weight: 500; line-height: 1.5; }
 .principle i { font-style: normal; font-size: 24px; }
-.process-flow { margin-top: clamp(34px, 3.2vw, 52px); display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--line); background: rgba(255,255,255,.28); }
+.process-flow { margin-top: clamp(38px, 4vw, 62px); display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: rgba(255,255,255,.28); }
 .process-step { min-height: 300px; padding: 30px; position: relative; display: flex; flex-direction: column; overflow: hidden; }
 .process-step + .process-step { border-left: 1px solid var(--line); }
-.process-step:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
-.process-step:nth-child(4) { border-top: 1px solid var(--line); }
-.process-step:nth-child(2) i { display: none; }
 .process-icon { width: 94px; height: 94px; display: grid; place-items: center; color: white; background: var(--red); border-radius: 50%; margin-bottom: 32px; box-shadow: 0 18px 38px rgba(255,59,24,.2); }
 .process-icon svg { width: 46px; height: 46px; stroke-width: 1.45; }
 .process-step > span { position: absolute; right: 20px; top: 12px; color: rgba(0,0,0,.065); font: 400 104px/.8 var(--font-display); letter-spacing: 0; }
@@ -222,15 +219,15 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .plan-card.featured { transform: translateY(-18px); }
 .plan-card.featured:hover { transform: translateY(-28px); }
 .plan-poster { min-height: 310px; padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; isolation: isolate; overflow: hidden; background: #080808; color: white; }
-.plan-poster::before { content: ""; position: absolute; z-index: -1; inset: -35% -10% -20% 22%; opacity: .78; background: repeating-linear-gradient(108deg, transparent 0 23px, var(--red) 24px 25px); transform: skewX(-8deg); }
-.plan-poster::after { content: ""; position: absolute; z-index: -1; width: 245px; height: 245px; right: -50px; top: -55px; border: 1px solid var(--red); transform: rotate(45deg); box-shadow: 0 0 0 22px #080808, 0 0 0 23px var(--red), 0 0 0 45px #080808, 0 0 0 46px var(--red); }
+.plan-poster::before { content: ""; position: absolute; z-index: -1; inset: -45% -18% -18% 58%; opacity: .42; background: repeating-linear-gradient(108deg, transparent 0 23px, var(--red) 24px 25px); transform: skewX(-8deg); }
+.plan-poster::after { content: ""; position: absolute; z-index: -1; width: 218px; height: 218px; right: -92px; top: -92px; opacity: .58; border: 1px solid var(--red); transform: rotate(45deg); box-shadow: 0 0 0 22px #080808, 0 0 0 23px var(--red), 0 0 0 45px #080808, 0 0 0 46px var(--red); }
 .plan-card.featured .plan-poster { background: var(--red); color: var(--black); }
 .plan-card.featured .plan-poster::before { background: repeating-linear-gradient(108deg, transparent 0 23px, rgba(0,0,0,.5) 24px 25px); }
 .plan-card.featured .plan-poster::after { border-color: rgba(0,0,0,.55); box-shadow: 0 0 0 22px var(--red), 0 0 0 23px rgba(0,0,0,.55), 0 0 0 45px var(--red), 0 0 0 46px rgba(0,0,0,.55); }
 .popular { position: absolute; top: 22px; right: 22px; z-index: 2; background: white; color: var(--black); padding: 11px 16px; font-family: var(--font-ui); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; }
 .plan-number { position: absolute; top: 27px; left: 28px; font: 800 11px var(--font-ui); letter-spacing: .12em; text-transform: uppercase; }
 .plan-eyebrow { margin: 0 0 15px; font-family: var(--font-ui); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; opacity: .76; }
-.plan-card h3 { max-width: 95%; font: 400 clamp(52px, 4.5vw, 72px)/.78 var(--font-display); text-transform: uppercase; margin: 0; color: var(--red); }
+.plan-card h3 { max-width: 82%; font: 400 clamp(52px, 4.5vw, 72px)/.78 var(--font-display); text-transform: uppercase; margin: 0; color: var(--red); }
 .plan-card.featured h3 { color: var(--black); }
 .plan-details { flex: 1; padding: 28px; display: flex; flex-direction: column; background: var(--paper); }
 .plan-card.featured .plan-details { background: #0d0d0d; color: white; }
@@ -259,7 +256,13 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .founder-visual img { position: absolute; object-fit: cover; filter: grayscale(1) contrast(1.06); box-shadow: 0 30px 100px rgba(0,0,0,.55); }
 .founder-main { width: 58%; height: 69%; left: 8%; top: 8%; object-position: 50% 30%; }
 .founder-detail { width: 62%; height: 46%; right: 3%; bottom: 7%; object-position: 27% center; border: 10px solid var(--black); }
-.founder-stamp { position: absolute; right: 10%; top: 11%; width: 118px; aspect-ratio: 1; border-radius: 50%; background: var(--red); color: white; display: grid; place-items: center; text-align: center; font: 400 29px/.8 var(--font-display); transform: rotate(9deg); z-index: 2; box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+.founder-orbit { position: absolute; right: 7%; top: 8%; width: 176px; aspect-ratio: 1; border-radius: 50%; background: var(--red); color: var(--black); display: grid; place-items: center; z-index: 2; box-shadow: 0 20px 55px rgba(0,0,0,.45); }
+.founder-orbit-ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: orbitSpin 11s linear infinite reverse; }
+.founder-orbit-ring path { fill: none; }
+.founder-orbit-ring text { fill: currentColor; font: 800 10px var(--font-ui); letter-spacing: 1.5px; }
+.founder-orbit-center { width: 88px; aspect-ratio: 1; border-radius: 50%; display: grid; place-content: center; justify-items: center; background: var(--black); color: white; }
+.founder-orbit-center strong { font: 400 35px/.72 var(--font-display); }
+.founder-orbit-center span { margin-top: 6px; font: 800 9px var(--font-ui); letter-spacing: .14em; }
 .founder-copy { align-self: center; padding: clamp(100px, 9vw, 155px) clamp(24px, 7vw, 110px) clamp(100px, 9vw, 155px) clamp(35px, 4vw, 72px); }
 .founder-copy h2 { font-size: clamp(68px, 6.2vw, 108px); }
 .founder-lead { color: white !important; font-size: clamp(21px, 1.7vw, 25px) !important; font-weight: 700 !important; line-height: 1.32 !important; }
@@ -277,13 +280,12 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .values-heading h2 { font-size: clamp(82px, 9vw, 148px); line-height: .78; }
 .values-heading h2 em { color: var(--black); }
 .values-heading > p { max-width: 430px; margin: 0 0 8px; font-size: clamp(19px, 1.55vw, 23px); font-weight: 600; line-height: 1.35; }
-.values-grid { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid rgba(255,255,255,.38); border-left: 1px solid rgba(255,255,255,.38); }
-.value-card { grid-column: span 2; min-height: 315px; padding: 30px; border-right: 1px solid rgba(255,255,255,.38); border-bottom: 1px solid rgba(255,255,255,.38); position: relative; display: flex; flex-direction: column; overflow: hidden; transition: background .35s, color .35s, transform .35s, opacity .35s; }
-.value-card:nth-child(4), .value-card:nth-child(5) { grid-column: span 3; }
+.values-grid { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid rgba(255,255,255,.38); border-left: 1px solid rgba(255,255,255,.38); }
+.value-card { grid-column: auto; min-height: 350px; padding: 26px; border-right: 1px solid rgba(255,255,255,.38); border-bottom: 1px solid rgba(255,255,255,.38); position: relative; display: flex; flex-direction: column; overflow: hidden; transition: background .35s, color .35s, transform .35s, opacity .35s; }
 .value-card > span { position: absolute; right: 20px; top: 12px; color: rgba(255,255,255,.13); font: 400 96px/.8 var(--font-display); }
 .value-icon { width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center; background: white; color: var(--red); box-shadow: 0 18px 42px rgba(0,0,0,.11); transition: transform .35s, background .35s, color .35s; }
 .value-icon svg { width: 36px; height: 36px; stroke-width: 1.55; }
-.value-card h3 { max-width: 330px; margin: auto 0 14px; font: 400 clamp(35px, 3vw, 48px)/.88 var(--font-display); text-transform: uppercase; }
+.value-card h3 { max-width: 330px; margin: auto 0 14px; font: 400 clamp(29px, 2.25vw, 40px)/.88 var(--font-display); text-transform: uppercase; }
 .value-card p { max-width: 440px; margin: 0; padding-right: 35px; color: rgba(255,255,255,.78); font-size: 16px; font-weight: 500; line-height: 1.45; }
 .value-card > i { position: absolute; right: 28px; bottom: 26px; font-style: normal; font-size: 22px; }
 .values-grid:has(.value-card:hover) .value-card:not(:hover) { opacity: .58; }
@@ -629,7 +631,11 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
   .founder-visual { min-height: 540px; padding: 0; }
   .founder-main { width: 69%; height: 73%; left: 3%; top: 5%; }
   .founder-detail { width: 66%; height: 43%; right: 1%; bottom: 3%; border-width: 6px; }
-  .founder-stamp { width: 88px; right: 5%; top: 8%; font-size: 23px; }
+  .founder-orbit { width: 112px; right: 4%; top: 7%; }
+  .founder-orbit-center { width: 56px; }
+  .founder-orbit-center strong { font-size: 24px; }
+  .founder-orbit-center span { margin-top: 4px; font-size: 7px; }
+  .founder-orbit-ring text { font-size: 9px; letter-spacing: 1.1px; }
   .founder-stats { grid-template-columns: 1fr; }
   .founder-stats div + div { border-left: 0; border-top: 1px solid rgba(255,255,255,.18); padding-left: 0; }
   .values-heading { margin-bottom: 48px; }

@@ -180,18 +180,18 @@ export default function Home() {
                 </article>
               ))}
             </div>
-            <div className="process-flow" aria-label="Las cuatro etapas del método Grosz">
-              {processSteps.map(([number, title, text, icon], index) => (
-                <article className="process-step" key={number}>
-                  <div className="process-icon"><TrainingIcon name={icon} /></div>
-                  <span>{number}</span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                  {index < processSteps.length - 1 && <i aria-hidden="true">→</i>}
-                </article>
-              ))}
-            </div>
           </div>
+        </div>
+        <div className="process-flow" aria-label="Las cuatro etapas del método Grosz">
+          {processSteps.map(([number, title, text, icon], index) => (
+            <article className="process-step" key={number}>
+              <div className="process-icon"><TrainingIcon name={icon} /></div>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              {index < processSteps.length - 1 && <i aria-hidden="true">→</i>}
+            </article>
+          ))}
         </div>
       </section>
 
@@ -312,7 +312,13 @@ export default function Home() {
         <div className="founder-visual">
           <img className="founder-main" src="assets/cambio-hero.jpg" alt="Cristian Grosz, atleta IFBB y entrenador personal" />
           <img className="founder-detail" src="assets/poster.jpg" alt="Cristian Grosz entrenando" />
-          <span className="founder-stamp">GTG<br />IFBB</span>
+          <div className="founder-orbit" aria-label="Cristian Grosz, atleta IFBB y fundador de Grosz Training Group">
+            <svg className="founder-orbit-ring" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="founder-orbit-path" d="M100 14a86 86 0 1 1-.01 0" /></defs>
+              <text><textPath href="#founder-orbit-path">ATLETA IFBB · EXPERIENCIA REAL · MÉTODO GROSZ · </textPath></text>
+            </svg>
+            <div className="founder-orbit-center"><strong>GTG</strong><span>IFBB</span></div>
+          </div>
         </div>
         <div className="founder-copy">
           <p className="kicker"><span></span> Grosz Training Group</p>
