@@ -173,7 +173,7 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .before-after { --reveal: 50%; position: relative; width: 100%; max-width: 760px; aspect-ratio: 3 / 4; justify-self: end; overflow: hidden; background: #111; box-shadow: 0 34px 80px rgba(0,0,0,.2); cursor: ew-resize; touch-action: pan-y; isolation: isolate; }
 .comparison-image { position: absolute; inset: 0; background-image: var(--comparison-image); background-repeat: no-repeat; background-size: 200% 100%; filter: grayscale(1) contrast(1.03); }
 .comparison-before { background-position: left top; }
-.comparison-after { background-position: right top; clip-path: inset(0 calc(100% - var(--reveal)) 0 0); }
+.comparison-after { background-position: right top; clip-path: inset(0 0 0 var(--reveal)); }
 .comparison-divider { position: absolute; z-index: 3; top: 0; bottom: 0; left: var(--reveal); width: 3px; background: white; box-shadow: 0 0 0 1px rgba(0,0,0,.2); transform: translateX(-50%); pointer-events: none; }
 .comparison-divider::before { content: "↔"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: var(--red); color: white; border: 4px solid white; font: 700 20px Arial; box-shadow: 0 12px 28px rgba(0,0,0,.28); }
 .comparison-label { position: absolute; z-index: 4; top: 20px; padding: 10px 13px; background: rgba(0,0,0,.82); color: white; font: 700 10px var(--font-ui); text-transform: uppercase; letter-spacing: .13em; pointer-events: none; }
