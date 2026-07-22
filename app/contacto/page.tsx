@@ -15,7 +15,7 @@ export default function ContactoPage() {
       <section className="contact-hero">
         <div className="contact-heading">
           <p className="kicker"><span></span> Empecemos por tu objetivo</p>
-          <h1>Hablemos de tu <em>próximo nivel.</em></h1>
+          <h1>Hablemos de tu <em>proximo nivel.</em></h1>
           <p>Completá estos datos y abrimos WhatsApp con tu consulta preparada. Sin formularios perdidos ni respuestas automáticas.</p>
           <div className="contact-channels">
             <a href="tel:+5491160162831"><small>Teléfono</small><strong>+54 9 11 6016-2831</strong><span>↗</span></a>

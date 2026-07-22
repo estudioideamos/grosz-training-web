@@ -48,16 +48,16 @@ const plans = [
 
 const principles = [
   ["01", "Individualidad", "Un plan construido para tu cuerpo, tus tiempos y tu objetivo."],
-  ["02", "Método", "Entrenamiento y nutrición trabajan juntos, con decisiones basadas en tu evolución."],
+  ["02", "Metodo", "Entrenamiento y nutrición trabajan juntos, con decisiones basadas en tu evolución."],
   ["03", "Seguimiento", "No recibís un PDF y quedás solo: medimos, ajustamos y avanzamos con vos."],
 ];
 
 const services: Array<[string, string, string, TrainingIconName]> = [
   ["01", "Entrenamiento a medida", "Una planificación específica para tu nivel, tus tiempos y el cuerpo que querés construir.", "training"],
-  ["02", "Alimentación aplicable", "Educación alimenticia y un plan claro, pensado para sostenerse fuera del gimnasio.", "nutrition"],
-  ["03", "Suplementación deportiva", "Recomendaciones integradas al objetivo, al entrenamiento y a tu alimentación.", "capsule"],
+  ["02", "Alimentacion aplicable", "Educación alimenticia y un plan claro, pensado para sostenerse fuera del gimnasio.", "nutrition"],
+  ["03", "Suplementacion deportiva", "Recomendaciones integradas al objetivo, al entrenamiento y a tu alimentación.", "capsule"],
   ["04", "Seguimiento diario", "Soporte por WhatsApp, motivación, respuestas y ajustes durante todo el proceso.", "chat"],
-  ["05", "Evaluación real", "Chequeos mensuales para medir grasa, masa muscular, rendimiento y evolución.", "chart"],
+  ["05", "Evaluacion real", "Chequeos mensuales para medir grasa, masa muscular, rendimiento y evolución.", "chart"],
   ["06", "Online o presencial", "La misma metodología Grosz, estés donde estés o vengas a una consulta en nuestras oficinas.", "location"],
 ];
 
@@ -70,8 +70,8 @@ const processSteps: Array<[string, string, string, TrainingIconName]> = [
 
 const values: Array<{ title: string; text: string; icon: TrainingIconName }> = [
   { title: "Trabajo en equipo", text: "Entrenador y alumno avanzan con un objetivo compartido y comunicación constante.", icon: "chat" },
-  { title: "Planes específicos", text: "Cada decisión responde a tu cuerpo, tu contexto y el resultado que buscás.", icon: "target" },
-  { title: "Educación alimenticia", text: "Entender qué comés te permite sostener el cambio más allá de una dieta.", icon: "nutrition" },
+  { title: "Planes especificos", text: "Cada decisión responde a tu cuerpo, tu contexto y el resultado que buscás.", icon: "target" },
+  { title: "Educacion alimenticia", text: "Entender qué comés te permite sostener el cambio más allá de una dieta.", icon: "nutrition" },
   { title: "Sistemas avanzados", text: "Medimos, registramos y ajustamos con método para no depender de la improvisación.", icon: "adjust" },
   { title: "Resultados reales", text: "El progreso se vuelve visible cuando el plan, la ejecución y la constancia se alinean.", icon: "chart" },
 ];
@@ -84,13 +84,13 @@ const articles = [
     href: "https://grosztraining.com.ar/potencia-muscular-manifestaciones-de-la-fuerza-parte-2/",
   },
   {
-    title: "Tipos de músculo y funciones",
+    title: "Tipos de musculo y funciones",
     category: "Rendimiento y anatomía",
     image: "assets/blog-musculo.jpg",
     href: "https://grosztraining.com.ar/potencia-muscular-tipos-de-musculo-y-funciones-1ra-parte/",
   },
   {
-    title: "Los mitos más comunes del fitness",
+    title: "Los mitos mas comunes del fitness",
     category: "Fitness sin atajos",
     image: "assets/blog-mitos.jpg",
     href: "https://grosztraining.com.ar/los-mitos-mas-comunes-del-fitness/",
@@ -109,7 +109,7 @@ export default function Home() {
           <p className="kicker"><span></span> Asesoramiento integral online y presencial</p>
           <h1>
             Tu cambio.<br />
-            <em>Con método.</em>
+            <em>Con metodo.</em>
           </h1>
           <p className="hero-intro">
             Entrenamiento, alimentación y seguimiento real para construir una versión más fuerte, atlética y saludable de vos.
@@ -136,7 +136,7 @@ export default function Home() {
               </text>
             </svg>
             <div className="experience-orbit-center">
-              <strong>1:1</strong>
+              <img src={`${basePath}/assets/mancuernas.svg`} alt="" />
               <span>con vos</span>
             </div>
           </div>
@@ -215,23 +215,23 @@ export default function Home() {
       <section className="training-mosaic" aria-label="Entrenamiento y comunidad Grosz">
         <figure className="mosaic-wide">
           <img src="assets/poster.jpg" alt="Entrenamiento de fuerza en Grosz Training" />
-          <figcaption><span>01</span><strong>Entrená con intención.</strong><i>Fuerza</i></figcaption>
+          <figcaption><span>01</span><strong>Entrena con intencion.</strong><i>Fuerza</i></figcaption>
         </figure>
         <figure className="mosaic-tall">
           <img src="assets/footer.jpg" alt="Entrenamiento personalizado de una alumna Grosz" />
-          <figcaption><span>02</span><strong>Cada repetición cuenta.</strong><i>Técnica</i></figcaption>
+          <figcaption><span>02</span><strong>Cada repeticion cuenta.</strong><i>Tecnica</i></figcaption>
         </figure>
         <figure className="mosaic-square">
           <img src="assets/cambio-hero.jpg" alt="Cristian Grosz, entrenador y atleta IFBB" />
-          <figcaption><span>03</span><strong>Experiencia aplicada.</strong><i>Método</i></figcaption>
+          <figcaption><span>03</span><strong>Experiencia aplicada.</strong><i>Metodo</i></figcaption>
         </figure>
-        <div className="mosaic-statement"><small>Grosz Training Group</small><p>Más que entrenar.<br /><em>Construir.</em></p></div>
+        <div className="mosaic-statement"><small>Grosz Training Group</small><p>Mas que entrenar.<br /><em>Construir.</em></p></div>
       </section>
 
       <section className="results" id="resultados">
         <div className="results-copy">
           <p className="kicker"><span></span> Trabajo real. Resultados reales.</p>
-          <h2><span>La prueba está</span><br /><em>en el proceso.</em></h2>
+          <h2><span>La prueba esta</span><br /><em>en el proceso.</em></h2>
           <p>No vendemos atajos. Aplicamos un sistema claro, acompañamos cada etapa y dejamos que el resultado hable.</p>
           <div className="results-actions">
             <a className="button button-light" href={`${basePath}/resultados/`}>Ver todos los casos <span>↗</span></a>
@@ -256,7 +256,7 @@ export default function Home() {
       <section className="comparison-section" aria-labelledby="comparison-title">
         <div className="comparison-copy">
           <p className="kicker dark"><span></span> Compará el proceso</p>
-          <h2 id="comparison-title">Un cambio que podés <em>ver.</em></h2>
+          <h2 id="comparison-title">Un cambio que podes <em>ver.</em></h2>
           <p>Deslizá la barra para entender visualmente cómo cambia la composición corporal manteniendo exactamente la misma pose y encuadre.</p>
           <div className="comparison-facts" aria-label="Datos de la comparación">
             <div><TrainingIcon name="target" /><span><small>01</small>Misma identidad</span></div>
@@ -271,7 +271,7 @@ export default function Home() {
       <section className="quote-section">
         <div className="quote-mark" aria-hidden="true">“</div>
         <blockquote>
-          “La atención a toda hora, la variedad en el entrenamiento y, sobre todo, la constancia y responsabilidad que te enseñan sirven también para la vida cotidiana.”
+          “La atencion a toda hora, la variedad en el entrenamiento y, sobre todo, la constancia y responsabilidad que te enseñan sirven tambien para la vida cotidiana.”
         </blockquote>
         <div className="quote-person">
           <span>DW</span>
@@ -283,7 +283,7 @@ export default function Home() {
         <div className="plans-header">
           <div>
             <p className="kicker dark"><span></span> Elegí cómo empezar</p>
-            <h2>Tu plan.<br /><em>Tu próximo nivel.</em></h2>
+            <h2>Tu plan.<br /><em>Tu proximo nivel.</em></h2>
           </div>
           <p>Todos los planes integran entrenamiento, alimentación y seguimiento. Lo que cambia es la modalidad de tu evaluación inicial.</p>
         </div>
@@ -315,14 +315,14 @@ export default function Home() {
           <div className="founder-orbit" aria-label="Cristian Grosz, atleta IFBB y fundador de Grosz Training Group">
             <svg className="founder-orbit-ring" viewBox="0 0 200 200" aria-hidden="true">
               <defs><path id="founder-orbit-path" d="M100 14a86 86 0 1 1-.01 0" /></defs>
-              <text><textPath href="#founder-orbit-path">ATLETA IFBB · EXPERIENCIA REAL · MÉTODO GROSZ · </textPath></text>
+              <text><textPath href="#founder-orbit-path">ATLETA IFBB · EXPERIENCIA REAL · METODO GROSZ · </textPath></text>
             </svg>
             <div className="founder-orbit-center"><strong>GTG</strong><span>IFBB</span></div>
           </div>
         </div>
         <div className="founder-copy">
           <p className="kicker"><span></span> Grosz Training Group</p>
-          <h2>Experiencia que se convierte en <em>método.</em></h2>
+          <h2>Experiencia que se convierte en <em>metodo.</em></h2>
           <p className="founder-lead">Cristian Grosz es atleta IFBB, entrenador personal y competidor de Men&apos;s Physique. Grosz Training nace de años de llevar cuerpos trabajados a su mejor versión de fuerza, simetría y definición.</p>
           <p>Su enfoque no busca copiar la rutina de otro atleta. Parte de la individualidad, combina entrenamiento con alimentación y acompaña cada ajuste hasta volver el progreso visible y sostenible.</p>
           <div className="founder-stats">
@@ -384,7 +384,7 @@ export default function Home() {
         <div className="insights-heading">
           <div>
             <p className="kicker dark"><span></span> Conocimiento aplicado</p>
-            <h2>Entrenar mejor también es <em>entender.</em></h2>
+            <h2>Entrenar mejor tambien es <em>entender.</em></h2>
           </div>
           <p>Ideas sobre fuerza, anatomía, alimentación y fitness escritas por el equipo Grosz para separar el método de los mitos.</p>
         </div>

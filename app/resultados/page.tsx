@@ -44,7 +44,7 @@ export default function ResultadosPage() {
 
       <section className="results-cta">
         <p>Tu objetivo necesita un punto de partida.</p>
-        <h2>El próximo caso<br />puede ser <em>el tuyo.</em></h2>
+        <h2>El proximo caso<br />puede ser <em>el tuyo.</em></h2>
         <a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Hablar con Grosz Training <span>↗</span></a>
       </section>
       <SiteFooter />

@@ -1,4 +1,4 @@
-const primary = ["Entrenamiento personalizado", "Nutrición", "Seguimiento real"];
+const primary = ["Entrenamiento personalizado", "Nutricion", "Seguimiento real"];
 const secondary = ["Evaluar", "Planificar", "Entrenar", "Medir", "Ajustar", "Avanzar"];
 
 export function Marquee({ alternate = false }: { alternate?: boolean }) {
