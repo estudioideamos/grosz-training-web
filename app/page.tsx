@@ -46,6 +46,44 @@ const principles = [
   ["03", "Seguimiento", "No recibís un PDF y quedás solo: medimos, ajustamos y avanzamos con vos."],
 ];
 
+const services = [
+  ["01", "Entrenamiento a medida", "Una planificación específica para tu nivel, tus tiempos y el cuerpo que querés construir."],
+  ["02", "Alimentación aplicable", "Educación alimenticia y un plan claro, pensado para sostenerse fuera del gimnasio."],
+  ["03", "Suplementación deportiva", "Recomendaciones integradas al objetivo, al entrenamiento y a tu alimentación."],
+  ["04", "Seguimiento diario", "Soporte por WhatsApp, motivación, respuestas y ajustes durante todo el proceso."],
+  ["05", "Evaluación real", "Chequeos mensuales para medir grasa, masa muscular, rendimiento y evolución."],
+  ["06", "Online o presencial", "La misma metodología Grosz, estés donde estés o vengas a una consulta en nuestras oficinas."],
+];
+
+const values = [
+  "Trabajo en equipo",
+  "Planes específicos",
+  "Educación alimenticia",
+  "Sistemas avanzados",
+  "Resultados reales",
+];
+
+const articles = [
+  {
+    title: "Manifestaciones de la fuerza",
+    category: "Entrenamiento de potencia",
+    image: "assets/blog-fuerza.jpg",
+    href: "https://grosztraining.com.ar/potencia-muscular-manifestaciones-de-la-fuerza-parte-2/",
+  },
+  {
+    title: "Tipos de músculo y funciones",
+    category: "Rendimiento y anatomía",
+    image: "assets/blog-musculo.jpg",
+    href: "https://grosztraining.com.ar/potencia-muscular-tipos-de-musculo-y-funciones-1ra-parte/",
+  },
+  {
+    title: "Los mitos más comunes del fitness",
+    category: "Fitness sin atajos",
+    image: "assets/blog-mitos.jpg",
+    href: "https://grosztraining.com.ar/los-mitos-mas-comunes-del-fitness/",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -55,9 +93,9 @@ export default function Home() {
         </a>
         <nav className="desktop-nav" aria-label="Navegación principal">
           <a href="#metodo">Método</a>
+          <a href="#servicios">Servicios</a>
           <a href="#resultados">Resultados</a>
           <a href="#planes">Planes</a>
-          <a href="#faq">Preguntas</a>
         </nav>
         <a className="nav-cta" href={whatsapp} target="_blank" rel="noreferrer">
           Empezá hoy <span aria-hidden="true">↗</span>
@@ -66,8 +104,10 @@ export default function Home() {
           <summary aria-label="Abrir menú"><span></span><span></span></summary>
           <nav aria-label="Navegación mobile">
             <a href="#metodo">Método</a>
+            <a href="#servicios">Servicios</a>
             <a href="#resultados">Resultados</a>
             <a href="#planes">Planes</a>
+            <a href="#cristian">Cristian</a>
             <a href="#faq">Preguntas</a>
             <a href={whatsapp} target="_blank" rel="noreferrer">Quiero empezar ↗</a>
           </nav>
@@ -113,6 +153,13 @@ export default function Home() {
         </div>
       </div>
 
+      <section className="authority-strip" aria-label="Credenciales Grosz Training">
+        <p><span>Dirección</span><strong>Cristian Grosz</strong></p>
+        <p><span>Trayectoria</span><strong>Atleta IFBB</strong></p>
+        <p><span>Especialidad</span><strong>Men&apos;s Physique</strong></p>
+        <p><span>Modalidad</span><strong>Online + presencial</strong></p>
+      </section>
+
       <section className="method section" id="metodo">
         <div className="section-heading">
           <p className="kicker dark"><span></span> El método Grosz</p>
@@ -131,6 +178,23 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="services-section" id="servicios">
+        <div className="services-intro">
+          <p className="kicker"><span></span> Asesoramiento integral</p>
+          <h2>Todo lo que tu progreso <em>necesita.</em></h2>
+          <p>Un sistema completo para entrenar con intención, comer con criterio y avanzar con alguien del otro lado.</p>
+        </div>
+        <div className="service-grid">
+          {services.map(([number, title, text]) => (
+            <article className="service-card" key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -191,18 +255,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about">
-        <div className="about-image"><img src="assets/poster.jpg" alt="Cristian Grosz entrenando" /></div>
-        <div className="about-copy">
-          <p className="kicker"><span></span> Grosz Training Group</p>
-          <h2>Entrenamos cuerpos.<br /><em>Formamos hábitos.</em></h2>
-          <p>Te damos herramientas simples de aplicar y altamente efectivas para lograr un cuerpo atlético, funcional, simétrico y saludable.</p>
-          <div className="about-stats">
-            <div><strong>1:1</strong><span>Planificación<br />individual</span></div>
-            <div><strong>360°</strong><span>Entrenamiento<br />+ nutrición</span></div>
-          </div>
-          <a className="text-link light" href={whatsapp} target="_blank" rel="noreferrer">Hablar con el equipo <span>↗</span></a>
+      <section className="founder" id="cristian">
+        <div className="founder-visual">
+          <img className="founder-main" src="assets/cambio-hero.jpg" alt="Cristian Grosz, atleta IFBB y entrenador personal" />
+          <img className="founder-detail" src="assets/poster.jpg" alt="Cristian Grosz entrenando" />
+          <span className="founder-stamp">GTG<br />IFBB</span>
         </div>
+        <div className="founder-copy">
+          <p className="kicker"><span></span> Grosz Training Group</p>
+          <h2>Experiencia que se convierte en <em>método.</em></h2>
+          <p className="founder-lead">Cristian Grosz es atleta IFBB, entrenador personal y competidor de Men&apos;s Physique. Grosz Training nace de años de llevar cuerpos trabajados a su mejor versión de fuerza, simetría y definición.</p>
+          <p>Su enfoque no busca copiar la rutina de otro atleta. Parte de la individualidad, combina entrenamiento con alimentación y acompaña cada ajuste hasta volver el progreso visible y sostenible.</p>
+          <div className="founder-stats">
+            <div><strong>1:1</strong><span>Planificación individual</span></div>
+            <div><strong>360°</strong><span>Entrenamiento + nutrición</span></div>
+            <div><strong>IFBB</strong><span>Experiencia competitiva</span></div>
+          </div>
+          <a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Quiero entrenar con Grosz <span>↗</span></a>
+        </div>
+      </section>
+
+      <section className="values-band" aria-label="Valores Grosz Training">
+        <p className="kicker"><span></span> Nuestros valores</p>
+        <div>{values.map((value, index) => <p key={value}><span>0{index + 1}</span>{value}</p>)}</div>
       </section>
 
       <section className="faq section" id="faq">
@@ -230,6 +305,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="insights section" id="contenido">
+        <div className="insights-heading">
+          <div>
+            <p className="kicker dark"><span></span> Conocimiento aplicado</p>
+            <h2>Entrenar mejor también es <em>entender.</em></h2>
+          </div>
+          <p>Ideas sobre fuerza, anatomía, alimentación y fitness escritas por el equipo Grosz para separar el método de los mitos.</p>
+        </div>
+        <div className="article-grid">
+          {articles.map((article, index) => (
+            <a className="article-card" href={article.href} target="_blank" rel="noreferrer" key={article.title}>
+              <figure><img src={article.image} alt="" /></figure>
+              <span>0{index + 1} / {article.category}</span>
+              <h3>{article.title}</h3>
+              <b>Leer artículo ↗</b>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="final-cta">
         <p>El mejor momento para empezar fue ayer.</p>
         <h2>El segundo mejor<br />es <em>hoy.</em></h2>
@@ -243,6 +338,9 @@ export default function Home() {
           <div className="footer-contact">
             <a href="tel:+5491160162831">+54 9 11 6016-2831</a>
             <a href="mailto:contacto@grosztraining.com.ar">contacto@grosztraining.com.ar</a>
+            <a href="https://www.instagram.com/groszcris/" target="_blank" rel="noreferrer">Instagram Cristian ↗</a>
+            <a href="https://youtube.com/@groszteam" target="_blank" rel="noreferrer">YouTube Grosz ↗</a>
+            <a href="https://www.tiktok.com/@groszcris" target="_blank" rel="noreferrer">TikTok ↗</a>
           </div>
         </div>
         <div className="footer-bottom">
