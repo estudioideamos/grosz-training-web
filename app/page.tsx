@@ -12,7 +12,7 @@ const plans = [
     title: "Plan online",
     eyebrow: "Entrená desde cualquier lugar",
     features: [
-      "Plan de alimentación personalizado",
+      "Plan de alimentación por profesionales matriculados del equipo",
       "Rutina de entrenamiento a medida",
       "Plan de suplementación deportiva",
       "Soporte por WhatsApp todo el mes",
@@ -26,7 +26,7 @@ const plans = [
     featured: true,
     features: [
       "Entrevista inicial por videollamada",
-      "Plan de alimentación personalizado",
+      "Plan de alimentación por profesionales matriculados del equipo",
       "Rutina de entrenamiento a medida",
       "Plan de suplementación deportiva",
       "Seguimiento y ajustes mensuales",
@@ -38,7 +38,7 @@ const plans = [
     eyebrow: "Evaluación en nuestras oficinas",
     features: [
       "Entrevista presencial con Cristian Grosz",
-      "Plan integral de alimentación",
+      "Plan de alimentación por profesionales matriculados del equipo",
       "Entrenamiento 100% personalizado",
       "Soporte por WhatsApp todo el mes",
       "Chequeo y ajustes mes a mes",
