@@ -61,10 +61,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% center; filter: grayscale(1) contrast(1.07); transform: scale(1.04); animation: heroReveal 1.8s cubic-bezier(.16,.8,.2,1) both, heroDrift 14s 1.8s ease-in-out infinite alternate; }
 .hero-media-shade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--black), transparent 38%), linear-gradient(0deg, rgba(0,0,0,.55), transparent 45%); }
 .vertical-word { position: absolute; right: -14px; top: 50%; transform: rotate(90deg) translateX(50%); transform-origin: right center; margin: 0; font-size: 10px; letter-spacing: .42em; opacity: .6; }
-.experience-card { position: absolute; bottom: 0; left: 0; background: var(--red); width: 255px; min-height: 138px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; }
-.experience-card { animation: cardReveal .9s .9s cubic-bezier(.16,.8,.2,1) both; }
-.experience-card strong { font: 700 56px/.82 var(--font-display); }
-.experience-card span { font-family: var(--font-ui); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; line-height: 1.5; }
+.experience-orbit { position: absolute; z-index: 3; bottom: 26px; left: 26px; width: 208px; aspect-ratio: 1; border-radius: 50%; background: var(--red); color: var(--black); display: grid; place-items: center; box-shadow: 0 22px 65px rgba(0,0,0,.4); animation: cardReveal .9s .9s cubic-bezier(.16,.8,.2,1) both; }
+.experience-orbit-ring { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; animation: orbitSpin 9s linear infinite; }
+.experience-orbit-ring path { fill: none; }
+.experience-orbit-ring text { fill: currentColor; font: 800 11px var(--font-ui); letter-spacing: 1.5px; }
+.experience-orbit-center { width: 104px; aspect-ratio: 1; border-radius: 50%; background: var(--black); color: white; display: grid; place-content: center; justify-items: center; position: relative; z-index: 1; box-shadow: 0 0 0 1px rgba(255,255,255,.15); }
+.experience-orbit-center strong { font: 400 47px/.72 var(--font-display); }
+.experience-orbit-center span { margin-top: 8px; font-family: var(--font-ui); font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .13em; }
 .hero-index { position: absolute; bottom: 22px; left: 22px; font-size: 9px; letter-spacing: .25em; opacity: .42; }
 
 .ticker { overflow: hidden; background: var(--red); color: white; height: 112px; display: flex; align-items: center; position: relative; z-index: 5; margin-top: 0; }
@@ -420,6 +423,7 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 @keyframes heroDrift { from { transform: scale(1.04) translate3d(0, 0, 0); } to { transform: scale(1.095) translate3d(-1.2%, -.8%, 0); } }
 @keyframes heroTextReveal { from { opacity: 0; filter: blur(8px); transform: translateY(44px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
 @keyframes cardReveal { from { opacity: 0; transform: translateY(70px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
 @keyframes floatingReveal { from { opacity: 0; transform: translateY(24px) scale(.92); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes cinematicSweep { 0% { opacity: 0; transform: translateX(0) skewX(-18deg); } 20% { opacity: 1; } 72%, 100% { opacity: 0; transform: translateX(390vw) skewX(-18deg); } }
 @keyframes cinematicIn { from { opacity: 0; filter: blur(8px); transform: translateY(70px) scale(.985); } to { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); } }
@@ -476,7 +480,11 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
   .hero-media { position: absolute; inset: 72px 0 0; }
   .hero-media img { object-position: 56% center; }
   .hero-media-shade { background: linear-gradient(0deg, #080808 17%, rgba(8,8,8,.68) 57%, rgba(8,8,8,.2)), linear-gradient(90deg, rgba(8,8,8,.5), transparent); }
-  .experience-card { display: none; }
+  .experience-orbit { width: 132px; left: auto; right: 18px; bottom: auto; top: 96px; }
+  .experience-orbit-center { width: 66px; }
+  .experience-orbit-center strong { font-size: 31px; }
+  .experience-orbit-center span { margin-top: 5px; font-size: 7px; }
+  .experience-orbit-ring text { font-size: 10px; letter-spacing: 1.15px; }
   .vertical-word { right: -22px; top: 30%; }
   .ticker { height: 84px; margin-top: 0; }
   .ticker-track { font-size: 39px; }

@@ -126,9 +126,19 @@ export default function Home() {
           <img src="assets/gym.jpg" alt="Cristian Grosz y el equipo de Grosz Training" />
           <div className="hero-media-shade"></div>
           <p className="vertical-word" aria-hidden="true">DISCIPLINA</p>
-          <div className="experience-card">
-            <strong>100%</strong>
-            <span>personalizado<br />a tu objetivo</span>
+          <div className="experience-orbit" aria-label="Plan cien por ciento personalizado a tu objetivo">
+            <svg className="experience-orbit-ring" viewBox="0 0 200 200" aria-hidden="true">
+              <defs>
+                <path id="hero-orbit-path" d="M100 14a86 86 0 1 1-.01 0" />
+              </defs>
+              <text>
+                <textPath href="#hero-orbit-path">100% PERSONALIZADO · A TU OBJETIVO · 100% PERSONALIZADO · </textPath>
+              </text>
+            </svg>
+            <div className="experience-orbit-center">
+              <strong>1:1</strong>
+              <span>con vos</span>
+            </div>
           </div>
         </div>
 
