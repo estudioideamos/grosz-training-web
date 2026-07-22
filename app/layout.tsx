@@ -11,10 +11,19 @@ const bebasNeue = localFont({
 });
 
 const openSans = localFont({
-  src: "../public/fonts/open-sans-v44-latin.woff2",
+  src: [
+    {
+      path: "../public/fonts/open-sans-v44-latin.woff2",
+      weight: "300 800",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/open-sans-v44-latin-italic.woff2",
+      weight: "300 800",
+      style: "italic",
+    },
+  ],
   variable: "--font-open-sans",
-  weight: "300 800",
-  style: "normal",
   display: "swap",
 });
 
