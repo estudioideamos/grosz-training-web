@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -9,8 +9,8 @@
   --red: #ff3b18;
   --line: rgba(15, 15, 15, .16);
   --font-display: "Bebas Neue", "Arial Narrow", Arial, sans-serif;
-  --font-ui: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
-  --font-body: Arial, Helvetica, sans-serif;
+  --font-ui: "Open Sans", Arial, Helvetica, sans-serif;
+  --font-body: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -85,7 +85,7 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .results-copy { padding-left: clamp(24px, 7vw, 120px); align-self: center; }
 .results-copy h2 { font-size: clamp(64px, 6.5vw, 108px); line-height: .82; }
 .results-copy h2 span, .results-copy h2 em { white-space: nowrap; }
-.results-copy > p:not(.kicker) { color: rgba(255,255,255,.57); line-height: 1.65; max-width: 460px; margin: 32px 0; }
+.results-copy > p:not(.kicker) { color: rgba(255,255,255,.64); font-size: 18px; font-weight: 500; line-height: 1.55; max-width: 480px; margin: 34px 0; }
 .transformations { display: flex; gap: 18px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; padding: 18px clamp(24px, 7vw, 120px) 20px 0; scrollbar-width: none; }
 .transformations::-webkit-scrollbar { display: none; }
 .transformations figure { min-width: min(44vw, 420px); height: 590px; margin: 0; position: relative; scroll-snap-align: start; overflow: hidden; background: #171717; }
@@ -103,7 +103,7 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .quote-person small { font-size: 9px; letter-spacing: .12em; opacity: .65; }
 
 .plans-header { display: grid; grid-template-columns: 1.3fr .7fr; gap: 8vw; align-items: end; }
-.plans-header > p { line-height: 1.65; color: rgba(0,0,0,.56); max-width: 460px; margin-bottom: 10px; }
+.plans-header > p { font-size: 18px; font-weight: 500; line-height: 1.55; color: rgba(0,0,0,.62); max-width: 480px; margin-bottom: 10px; }
 .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 90px; align-items: stretch; }
 .plan-card { border: 1px solid var(--line); padding: 32px; min-height: 590px; display: flex; flex-direction: column; position: relative; background: rgba(255,255,255,.25); transition: transform .3s, background .3s; }
 .plan-card:hover { transform: translateY(-8px); background: white; }
@@ -114,7 +114,7 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .plan-eyebrow { min-height: 38px; margin: 42px 0 12px; font-family: var(--font-ui); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .62; }
 .plan-card h3 { font: 700 44px/.9 var(--font-display); text-transform: uppercase; margin: 0 0 30px; }
 .plan-card ul { margin: 0 0 40px; padding: 0; list-style: none; border-top: 1px solid currentColor; }
-.plan-card li { display: grid; grid-template-columns: 24px 1fr; gap: 8px; padding: 15px 0; border-bottom: 1px solid currentColor; border-color: rgba(120,120,120,.22); font-size: 13px; line-height: 1.4; }
+.plan-card li { display: grid; grid-template-columns: 24px 1fr; gap: 8px; padding: 15px 0; border-bottom: 1px solid currentColor; border-color: rgba(120,120,120,.22); font-size: 14px; font-weight: 500; line-height: 1.45; }
 .plan-card li span { color: var(--red); }
 .plan-card > a { margin-top: auto; min-height: 52px; background: var(--red); color: white; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; text-transform: uppercase; font-family: var(--font-ui); font-size: 12px; letter-spacing: .09em; font-weight: 700; }
 
@@ -123,7 +123,7 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .about-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: grayscale(1); }
 .about-copy { align-self: center; padding: 9vw 7vw; }
 .about-copy h2 { font-size: clamp(58px, 5.8vw, 100px); }
-.about-copy > p:not(.kicker) { color: rgba(255,255,255,.58); line-height: 1.7; max-width: 530px; margin: 35px 0; }
+.about-copy > p:not(.kicker) { color: rgba(255,255,255,.64); font-size: 18px; font-weight: 500; line-height: 1.58; max-width: 550px; margin: 35px 0; }
 .about-stats { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); margin: 45px 0; }
 .about-stats div { padding: 28px 0; display: flex; align-items: center; gap: 20px; }
 .about-stats div + div { border-left: 1px solid rgba(255,255,255,.18); padding-left: 28px; }
@@ -139,11 +139,11 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .faq-list summary::-webkit-details-marker { display: none; }
 .faq-list summary span { font: 28px Arial; color: var(--red); transition: transform .25s; }
 .faq-list details[open] summary span { transform: rotate(45deg); }
-.faq-list details p { margin: -12px 50px 35px 0; color: rgba(0,0,0,.56); line-height: 1.65; max-width: 620px; }
+.faq-list details p { margin: -12px 50px 35px 0; color: rgba(0,0,0,.62); font-size: 18px; font-weight: 500; line-height: 1.6; max-width: 620px; }
 
-.final-cta { min-height: 690px; background: var(--black); color: white; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 90px 24px; }
+.final-cta { min-height: 790px; background: var(--black); color: white; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 90px 24px; overflow: hidden; }
 .final-cta > p { text-transform: uppercase; font-family: var(--font-ui); font-weight: 700; letter-spacing: .14em; font-size: 12px; opacity: .62; }
-.final-cta h2 { font-size: clamp(78px, 9vw, 158px); margin: 20px 0 45px; }
+.final-cta h2 { font-size: clamp(130px, 14.5vw, 220px); line-height: .78; max-width: 1220px; margin: 24px 0 56px; }
 
 footer { background: #050505; color: white; padding: 70px clamp(24px, 7vw, 120px) 26px; border-top: 1px solid rgba(255,255,255,.1); }
 .footer-main { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 6vw; align-items: start; padding-bottom: 65px; }
@@ -244,8 +244,8 @@ footer { background: #050505; color: white; padding: 70px clamp(24px, 7vw, 120px
   .faq { gap: 60px; }
   .faq-title { position: static; }
   .faq-list summary { min-height: 86px; font-size: 22px; }
-  .final-cta { min-height: 620px; }
-  .final-cta h2 { font-size: clamp(72px, 20vw, 110px); }
+  .final-cta { min-height: 690px; }
+  .final-cta h2 { font-size: clamp(92px, 24vw, 126px); line-height: .8; margin-bottom: 48px; }
   .footer-main { grid-template-columns: 1fr; }
   .footer-bottom { flex-wrap: wrap; }
   .footer-bottom span { width: 100%; }
