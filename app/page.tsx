@@ -411,7 +411,7 @@ export default function Home() {
       <SiteFooter />
 
       <a className="floating-whatsapp" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Consultar por WhatsApp">
-        <span>WA</span><b>Hablemos</b>
+        <span><img src={`${basePath}/assets/whatsapp.svg`} alt="" /></span><b>Hablemos</b>
       </a>
     </main>
   );
