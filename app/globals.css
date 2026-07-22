@@ -38,7 +38,7 @@ button, summary { font: inherit; }
 .kicker { display: flex; align-items: center; gap: 11px; margin: 0 0 28px; text-transform: uppercase; font-family: var(--font-ui); font-size: 12px; letter-spacing: .14em; font-weight: 700; color: rgba(255,255,255,.72); }
 .kicker span { width: 8px; height: 8px; background: var(--red); display: inline-block; transform: rotate(45deg); }
 .kicker.dark { color: rgba(0,0,0,.55); }
-h1, h2 { text-transform: uppercase; font-stretch: condensed; letter-spacing: -.005em; line-height: .8; margin: 0; font-family: var(--font-display); font-weight: 700; text-wrap: balance; }
+h1, h2 { text-transform: uppercase; font-stretch: 100%; letter-spacing: -.005em; line-height: .8; margin: 0; font-family: var(--font-display); font-weight: 700; text-wrap: balance; }
 h1 { font-size: clamp(90px, 10.5vw, 180px); max-width: 790px; }
 h1 em, h2 em { color: var(--red); font-style: normal; }
 .hero-copy .kicker { animation: heroTextReveal .8s .15s cubic-bezier(.2,.75,.2,1) both; }
