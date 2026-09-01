@@ -2,14 +2,43 @@
 
 Rediseño de la landing de Grosz Training Group, enfocado en conversión, claridad de servicios y experiencia mobile.
 
-## Edición local
+**Sitio público:** [estudioideamos.github.io/grosz-training-web](https://estudioideamos.github.io/grosz-training-web/)
 
-1. Instalá las dependencias con `npm install`.
-2. Iniciá el sitio con `npm run dev`.
-3. Editá el contenido principal en `app/page.tsx` y los estilos en `app/globals.css`.
+## Experiencia
+
+Presentación institucional, servicios, metodología, carrusel de procesos para mobile, recursos optimizados, contacto y animaciones con soporte para movimiento reducido.
+
+## Tecnología
+
+Next.js 16, React 19, TypeScript, Vinext/Vite y exportación estática para GitHub Pages.
+
+## Desarrollo
+
+Requiere Node.js 22 o superior.
+
+```bash
+npm install
+npm run dev
+npm run lint
+npm test
+npm run build
+npm run build:pages
+```
+
+El contenido principal se encuentra en `app/page.tsx`, los estilos en `app/globals.css` y los recursos en `public/`.
 
 ## Publicación
 
-Cada actualización enviada a la rama `main` se compila y publica automáticamente en GitHub Pages mediante el flujo incluido en `.github/workflows/deploy-pages.yml`.
+Cada actualización de `main` se compila y publica mediante `.github/workflows/deploy-pages.yml`.
 
-Sitio público: https://estudioideamos.github.io/grosz-training-web/
+## Estructura
+
+- `app/`: páginas y componentes.
+- `public/`: imágenes.
+- `tests/`: verificaciones del HTML.
+- `build/`: salida de publicación.
+- `.github/`: automatización.
+
+## Créditos
+
+Diseño y desarrollo por [Estudio Ideamos](https://ideamos.com.ar/).
