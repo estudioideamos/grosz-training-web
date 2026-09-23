@@ -645,3 +645,13 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
   .floating-whatsapp b { display: none; }
   .floating-whatsapp { padding-right: 7px; }
 }
+
+/* Center the mobile hero without changing desktop or form layouts. */
+@media (max-width: 767px) {
+  .hero-copy{text-align:center}
+  .hero-copy h1,.hero-intro{margin-inline:auto}
+  .hero-copy .eyebrow{justify-content:center}
+  .hero-actions{align-items:center;justify-content:center}
+  .hero-actions a{justify-content:center;min-height:44px}
+
+}
