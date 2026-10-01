@@ -4,6 +4,7 @@ import { SiteHeader } from "../components/SiteHeader";
 import { ResultsGallery } from "../components/ResultsGallery";
 
 export const metadata: Metadata = {
+  alternates: { canonical: new URL("resultados/", process.env.SITE_URL || "https://estudioideamos.github.io/grosz-training-web/").href },
   title: "Resultados reales | Grosz Training",
   description: "Conocé transformaciones y procesos reales acompañados por Grosz Training.",
 };
@@ -12,7 +13,7 @@ const whatsapp = "https://wa.me/5491160162831?text=Hola%20Grosz%20Training%2C%20
 
 export default function ResultadosPage() {
   return (
-    <main className="results-page">
+    <main id="main-content" className="results-page">
       <SiteHeader subpage />
       <section className="results-hero">
         <div>

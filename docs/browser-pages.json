@@ -1,0 +1,42 @@
+[
+  {
+    "width": 390,
+    "route": "/",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/contacto/",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/resultados/",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "interactionChecks": "passed",
+    "consoleErrors": []
+  },
+  {
+    "width": 1366,
+    "route": "/",
+    "violations": []
+  },
+  {
+    "width": 1366,
+    "route": "/contacto/",
+    "violations": []
+  },
+  {
+    "width": 1366,
+    "route": "/resultados/",
+    "violations": []
+  },
+  {
+    "width": 1366,
+    "interactionChecks": "passed",
+    "consoleErrors": []
+  }
+]

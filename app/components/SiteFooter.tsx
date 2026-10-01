@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "./ResponsiveImage";
 const groups = [
   {
     title: "Grosz en redes",
@@ -37,7 +38,7 @@ export function SiteFooter() {
       <div className="footer-topline"><span>Grosz Training Group</span><b>Todo el ecosistema. Un solo método.</b></div>
       <div className="footer-main footer-expanded">
         <div className="footer-brand-column">
-          <img src={`${basePath}/assets/grosz-logo.png`} alt="Grosz Training Group" loading="lazy" decoding="async" />
+          <ResponsiveImage src={`${basePath}/assets/grosz-logo.png`} alt="Grosz Training Group" sizes="138px" loading="lazy" decoding="async" />
           <p>Resultados reales a través de entrenamiento, nutrición y seguimiento personalizado.</p>
           <a className="footer-contact-cta" href={`${basePath}/contacto/`}>Contacto <span>↗</span></a>
         </div>
@@ -52,8 +53,8 @@ export function SiteFooter() {
       </div>
       <div className="footer-bottom">
         <span>© 2026 Grosz Training Group</span>
-        <a className="footer-credit" href="https://ideamos.com.ar" target="_blank" rel="noreferrer">
-          Diseñado para rendir. <strong>Construido por Estudio Ideamos</strong> <i>↗</i>
+        <a id="ideamos-credit" className="footer-credit" href="https://ideamos.com.ar" target="_blank" rel="noreferrer">
+          <span>Diseñado para rendir. <strong>Construido por</strong></span> <ResponsiveImage className="ideamos-logo" src={`${basePath}/assets/ideamos-logo.webp`} alt="Estudio Ideamos" sizes="124px" loading="lazy" decoding="async" /> <i aria-hidden="true">↗</i>
         </a>
       </div>
     </footer>

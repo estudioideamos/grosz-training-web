@@ -1,0 +1,7 @@
+{
+  "Content-Security-Policy": "default-src 'none'; script-src 'self' 'sha256-OBTN3RiyCV4Bq7dFqZ5a2pAXjnCcCYeTJMO2I/LYKeo=' 'sha256-diMIoOrw/71JMDkfp33P+nCymXSdkNJfd9J2p1wfEb0=' 'sha256-i0XfQlFdVnRLcOhoCm7AIBVh+hwBOeRpY8mHGK0aNLs=' 'sha256-wjOnvheH9KxMlSTe6xp+ZCthln3BLoblUkhU01jK4iI=' 'sha256-d2z8iib1F5nQ3sgtZOWbqVLfiX0xztj0INw1uE8jMfk=' 'sha256-asztPHvTcNObhxMVwEqEZiD0YH+Afh19nt5cptPZIEE=' 'sha256-2+1NSmzW/rKUk5te93tVpl/Hcv/r6YFLy5tXj3wchEw='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests",
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  "X-Frame-Options": "DENY"
+}

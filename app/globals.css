@@ -14,7 +14,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 24px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-weight: 500; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 button, summary { font: inherit; }
 ::selection { background: var(--red); color: white; }
 
@@ -409,9 +409,9 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
 .floating-whatsapp span img { width: 19px; height: 19px; display: block; filter: brightness(0) invert(1); }
 
 @keyframes navReveal { from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: translateY(0); } }
-@keyframes heroReveal { from { opacity: 0; filter: grayscale(1) contrast(1.2) blur(10px); transform: scale(1.16); } to { opacity: 1; filter: grayscale(1) contrast(1.07) blur(0); transform: scale(1.04); } }
+@keyframes heroReveal { from { opacity: .7; transform: scale(1.16); } to { opacity: 1; transform: scale(1.04); } }
 @keyframes heroDrift { from { transform: scale(1.04) translate3d(0, 0, 0); } to { transform: scale(1.095) translate3d(-1.2%, -.8%, 0); } }
-@keyframes heroTextReveal { from { opacity: 0; filter: blur(8px); transform: translateY(44px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+@keyframes heroTextReveal { from { opacity: .7; transform: translateY(44px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes cardReveal { from { opacity: 0; transform: translateY(70px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes orbitSpin { to { transform: rotate(360deg); } }
 @keyframes floatingReveal { from { opacity: 0; transform: translateY(24px) scale(.92); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -655,3 +655,41 @@ h2 { font-size: clamp(78px, 9.5vw, 160px); }
   .hero-actions a{justify-content:center;min-height:44px}
 
 }
+
+/* Keyboard access stays visible over both dark and light panels. */
+:focus-visible { outline: 3px solid #ffcd66; outline-offset: 4px; }
+.skip-link { position: fixed; top: 10px; left: 12px; z-index: 200; padding: 12px 18px; background: white; color: black; transform: translateY(-180%); }
+.skip-link:focus { transform: none; }
+.before-after:focus-within { outline: 3px solid #ffcd66; outline-offset: 4px; }
+.results-lightbox { border: 0; margin: 0; max-width: none; max-height: none; width: 100%; height: 100%; color: white; }
+.results-lightbox:not([open]) { display: none; }
+.results-lightbox::backdrop { background: rgba(0,0,0,.94); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
+
+/* Preserve the brand red in large surfaces; small text needs stronger contrast. */
+.button-primary, .footer-contact-cta, .plan-details > a { background-color: #c72b10; }
+.plan-includes, .contact-form > span { color: #b9250d; }
+.service-card-top > span { color: #777; }
+.quote-person, .quote-person p small, .results-data div > span { color: #080808; opacity: 1; }
+.results-disclaimer { color: #595959; }
+.footer-bottom { color: #aaa; font-size: 12px; }
+.ticker-pause { position: absolute; left: 12px; bottom: 6px; z-index: 2; border: 1px solid currentColor; padding: 4px 9px; background: #080808; color: white; font-size: 12px; cursor: pointer; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (prefers-reduced-motion: reduce) { .ticker-pause { display: none; } }
+.nav-cta, .nav-cta:hover { background-color: #c72b10; }
+.plan-card.featured .plan-includes { color: var(--red); }
+.footer-bottom > span { opacity: 1; }
+
+/* Keep below-the-fold layout and paint deferred until the section approaches. */
+.services-section, .training-mosaic, .results, .comparison-section, .quote-section, .plans, .founder, .values-band, .faq, .insights, .final-cta { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+.floating-whatsapp[hidden] { display: none; }
+.footer-credit { align-items: center; flex-wrap: wrap; gap: 10px; color: #bdbdbd; font-size: 11px; }
+.footer-credit .ideamos-logo { width: 124px; height: auto; max-height: 40px; object-fit: contain; filter: none; }
+.comparison-section .kicker.dark, .insights .kicker.dark { color: #555; }
+.comparison-copy h2 em, .insights h2 em { color: #d32e11; }
+.comparison-facts small, .article-card > span { color: #b9250d; }
+
+.comparison-note { color: #595959; }
+.comparison-label.after { background: #c72b10; color: white; }

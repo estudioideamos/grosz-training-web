@@ -1,3 +1,5 @@
+import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
+import { ResponsiveImage } from "./components/ResponsiveImage";
 import { BeforeAfter } from "./components/BeforeAfter";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
@@ -82,26 +84,23 @@ const articles = [
     title: "Manifestaciones de la fuerza",
     category: "Entrenamiento de potencia",
     image: "assets/blog-fuerza.jpg",
-    href: "https://grosztraining.com.ar/potencia-muscular-manifestaciones-de-la-fuerza-parte-2/",
   },
   {
     title: "Tipos de musculo y funciones",
     category: "Rendimiento y anatomía",
     image: "assets/blog-musculo.jpg",
-    href: "https://grosztraining.com.ar/potencia-muscular-tipos-de-musculo-y-funciones-1ra-parte/",
   },
   {
     title: "Los mitos mas comunes del fitness",
     category: "Fitness sin atajos",
     image: "assets/blog-mitos.jpg",
-    href: "https://grosztraining.com.ar/los-mitos-mas-comunes-del-fitness/",
   },
 ];
 
 export default function Home() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
 
       <section className="hero" id="inicio">
@@ -124,10 +123,10 @@ export default function Home() {
         </div>
 
         <div className="hero-media">
-          <img src="assets/gym.webp" alt="Cristian Grosz y el equipo de Grosz Training" fetchPriority="high" decoding="async" />
+          <ResponsiveImage src="assets/gym.webp" alt="Cristian Grosz y el equipo de Grosz Training" sizes="(max-width: 900px) 100vw, 48vw" fetchPriority="high" decoding="async" />
           <div className="hero-media-shade"></div>
           <p className="vertical-word" aria-hidden="true">DISCIPLINA</p>
-          <div className="experience-orbit" aria-label="Plan cien por ciento personalizado a tu objetivo">
+          <div className="experience-orbit" role="img" aria-label="Plan cien por ciento personalizado a tu objetivo">
             <svg className="experience-orbit-ring" viewBox="0 0 200 200" aria-hidden="true">
               <defs>
                 <path id="hero-orbit-path" d="M100 14a86 86 0 1 1-.01 0" />
@@ -137,7 +136,7 @@ export default function Home() {
               </text>
             </svg>
             <div className="experience-orbit-center">
-              <img src={`${basePath}/assets/mancuernas.svg`} alt="" />
+              <ResponsiveImage src={`${basePath}/assets/mancuernas.svg`} alt="" />
             </div>
           </div>
         </div>
@@ -206,15 +205,15 @@ export default function Home() {
 
       <section className="training-mosaic" aria-label="Entrenamiento y comunidad Grosz">
         <figure className="mosaic-wide">
-          <img src="assets/poster.webp" alt="Entrenamiento de fuerza en Grosz Training" loading="lazy" decoding="async" />
+          <ResponsiveImage src="assets/poster.webp" alt="Entrenamiento de fuerza en Grosz Training" loading="lazy" decoding="async" />
           <figcaption><span>01</span><strong>Entrena con intencion.</strong><i>Fuerza</i></figcaption>
         </figure>
         <figure className="mosaic-tall">
-          <img src="assets/footer.webp" alt="Entrenamiento personalizado de una alumna Grosz" loading="lazy" decoding="async" />
+          <ResponsiveImage src="assets/footer.webp" alt="Entrenamiento personalizado de una alumna Grosz" loading="lazy" decoding="async" />
           <figcaption><span>02</span><strong>Cada repeticion cuenta.</strong><i>Tecnica</i></figcaption>
         </figure>
         <figure className="mosaic-square">
-          <img src="assets/cambio-hero.webp" alt="Cristian Grosz, entrenador y atleta IFBB" loading="lazy" decoding="async" />
+          <ResponsiveImage src="assets/cambio-hero.webp" alt="Cristian Grosz, entrenador y atleta IFBB" loading="lazy" decoding="async" />
           <figcaption><span>03</span><strong>Experiencia aplicada.</strong><i>Metodo</i></figcaption>
         </figure>
         <div className="mosaic-statement"><small>Grosz Training Group</small><p>Mas que entrenar.<br /><em>Construir.</em></p></div>
@@ -230,7 +229,7 @@ export default function Home() {
             <a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Quiero lograr mi cambio <span>↗</span></a>
           </div>
         </div>
-        <div className="transformations" aria-label="Transformaciones reales de alumnos Grosz">
+        <div className="transformations" role="region" tabIndex={0} aria-label="Transformaciones reales de alumnos Grosz">
           {[
             ["assets/cambio-01.webp", "Cambio real de alumno Grosz, frente y espalda"],
             ["assets/cambio-02.webp", "Evolución física real de alumno Grosz"],
@@ -238,7 +237,7 @@ export default function Home() {
             ["assets/cambio-04.webp", "Resultado real de entrenamiento personalizado"],
           ].map(([src, alt], index) => (
             <figure key={src}>
-              <img src={src} alt={alt} loading="lazy" decoding="async" />
+              <ResponsiveImage src={src} alt={alt} loading="lazy" decoding="async" />
               <figcaption><span>CASO {String(index + 1).padStart(2, "0")}</span><b>DESLIZÁ →</b></figcaption>
             </figure>
           ))}
@@ -302,9 +301,9 @@ export default function Home() {
 
       <section className="founder" id="cristian">
         <div className="founder-visual">
-          <img className="founder-main" src="assets/cambio-hero.webp" alt="Cristian Grosz, atleta IFBB y entrenador personal" loading="lazy" decoding="async" />
-          <img className="founder-detail" src="assets/poster.webp" alt="Cristian Grosz entrenando" loading="lazy" decoding="async" />
-          <div className="founder-orbit" aria-label="Cristian Grosz, atleta IFBB y fundador de Grosz Training Group">
+          <ResponsiveImage className="founder-main" src="assets/cambio-hero.webp" alt="Cristian Grosz, atleta IFBB y entrenador personal" loading="lazy" decoding="async" />
+          <ResponsiveImage className="founder-detail" src="assets/poster.webp" alt="Cristian Grosz entrenando" loading="lazy" decoding="async" />
+          <div className="founder-orbit" role="img" aria-label="Cristian Grosz, atleta IFBB y fundador de Grosz Training Group">
             <svg className="founder-orbit-ring" viewBox="0 0 200 200" aria-hidden="true">
               <defs><path id="founder-orbit-path" d="M100 15a85 85 0 1 1-.01 0" /></defs>
               <text textLength="510" lengthAdjust="spacing"><textPath href="#founder-orbit-path">ATLETA IFBB · EXPERIENCIA REAL · METODO GROSZ · DISCIPLINA · </textPath></text>
@@ -378,15 +377,15 @@ export default function Home() {
             <p className="kicker dark"><span></span> Conocimiento aplicado</p>
             <h2>Entrenar mejor tambien es <em>entender.</em></h2>
           </div>
-          <p>Ideas sobre fuerza, anatomía, alimentación y fitness escritas por el equipo Grosz para separar el método de los mitos.</p>
+          <p>Consultanos sobre fuerza, anatomía y fitness: el equipo te ayuda a entender cómo aplicarlo a tu entrenamiento.</p>
         </div>
         <div className="article-grid">
           {articles.map((article, index) => (
-            <a className="article-card" href={article.href} target="_blank" rel="noreferrer" key={article.title}>
-              <figure><img src={article.image} alt="" loading="lazy" decoding="async" /></figure>
+            <a className="article-card" href={`https://wa.me/5491160162831?text=${encodeURIComponent(`Hola Grosz Training, quiero consultar sobre: ${article.title}`)}`} target="_blank" rel="noreferrer" key={article.title}>
+              <figure><ResponsiveImage src={article.image} alt="" loading="lazy" decoding="async" /></figure>
               <span>0{index + 1} / {article.category}</span>
               <h3>{article.title}</h3>
-              <b>Leer artículo ↗</b>
+              <b>Consultar este tema ↗</b>
             </a>
           ))}
         </div>
@@ -402,9 +401,7 @@ export default function Home() {
 
       <SiteFooter />
 
-      <a className="floating-whatsapp" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Consultar por WhatsApp">
-        <span><img src={`${basePath}/assets/whatsapp.svg`} alt="" /></span><b>Hablemos</b>
-      </a>
+      <FloatingWhatsApp href={whatsapp} />
     </main>
   );
 }

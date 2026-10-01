@@ -27,11 +27,16 @@ const openSans = localFont({
   display: "swap",
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const siteUrl = process.env.SITE_URL || "https://estudioideamos.github.io/grosz-training-web/";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://estudioideamos.github.io/grosz-training-web/"),
+  alternates: { canonical: "./" },
+  robots: process.env.SITE_INDEXABLE === "true" ? { index: true, follow: true } : { index: false, follow: false },
+  metadataBase: new URL(siteUrl),
   title: "Grosz Training | Entrenamiento y nutrición personalizada",
   description: "Planes personalizados de entrenamiento, alimentación y seguimiento real, online o presencial, con Grosz Training Group.",
-  icons: { icon: "assets/grosz-logo.png" },
+  icons: { icon: `${basePath}/assets/grosz-logo.png` },
   openGraph: {
     title: "Grosz Training | Tu cambio, con método",
     description: "Entrenamiento, alimentación y seguimiento real para alcanzar tu próximo nivel.",
@@ -48,5 +53,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="es" className={`${bebasNeue.variable} ${openSans.variable}`}><body>{children}</body></html>;
+  return <html lang="es" className={`${bebasNeue.variable} ${openSans.variable}`}><body><a className="skip-link" href="#main-content">Saltar al contenido</a>{children}</body></html>;
 }

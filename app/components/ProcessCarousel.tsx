@@ -8,7 +8,10 @@ type ProcessStep = [string, string, string, TrainingIconName];
 export function ProcessCarousel({ steps }: { steps: ProcessStep[] }) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const indexRef = useRef(0);
+  const visibleRef = useRef(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [manualPause, setManualPause] = useState(false);
+  const manualPauseRef = useRef(false);
   const pausedRef = useRef(false);
   const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dragRef = useRef({ active: false, startX: 0, scrollLeft: 0 });
@@ -17,11 +20,14 @@ export function ProcessCarousel({ steps }: { steps: ProcessStep[] }) {
     const viewport = viewportRef.current;
     if (!viewport) return;
 
+    const observer = new IntersectionObserver(([entry]) => { visibleRef.current = entry.isIntersecting; });
+    observer.observe(viewport);
     const desktop = window.matchMedia("(min-width: 901px)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const advance = () => {
-      if (!desktop.matches || reducedMotion.matches || pausedRef.current) return;
+      if (!desktop.matches || reducedMotion.matches || pausedRef.current || manualPauseRef.current || document.hidden) return;
+      if (!visibleRef.current) return;
       const card = viewport.querySelector<HTMLElement>(".process-step");
       if (!card) return;
 
@@ -38,6 +44,7 @@ export function ProcessCarousel({ steps }: { steps: ProcessStep[] }) {
 
     const interval = window.setInterval(advance, 2800);
     return () => {
+      observer.disconnect();
       window.clearInterval(interval);
       if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
     };
@@ -75,7 +82,7 @@ export function ProcessCarousel({ steps }: { steps: ProcessStep[] }) {
     const normalizedIndex = (nextIndex + steps.length) % steps.length;
     indexRef.current = normalizedIndex;
     setActiveIndex(normalizedIndex);
-    viewport.scrollTo({ left: card.offsetWidth * normalizedIndex, behavior: "smooth" });
+    viewport.scrollTo({ left: card.offsetWidth * normalizedIndex, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   };
 
   const syncActiveStep = () => {
@@ -91,6 +98,8 @@ export function ProcessCarousel({ steps }: { steps: ProcessStep[] }) {
       <div
         ref={viewportRef}
         className="process-flow"
+        role="region"
+        tabIndex={0}
         aria-label="Las cuatro etapas del método Grosz"
         onMouseEnter={() => { pausedRef.current = true; }}
         onMouseLeave={() => { if (!dragRef.current.active) pausedRef.current = false; }}
@@ -113,9 +122,10 @@ export function ProcessCarousel({ steps }: { steps: ProcessStep[] }) {
           ))}
         </div>
       </div>
-      <div className="process-controls" aria-label="Navegación de las etapas">
+      <div onFocus={() => { pausedRef.current = true; }} onBlur={() => { pausedRef.current = false; }} className="process-controls" aria-label="Navegación de las etapas">
         <strong><span>{String(activeIndex + 1).padStart(2, "0")}</span> / {String(steps.length).padStart(2, "0")}</strong>
         <div>
+          <button type="button" aria-label={manualPause ? "Reanudar carrusel" : "Pausar carrusel"} aria-pressed={manualPause} onClick={() => { manualPauseRef.current = !manualPause; setManualPause(!manualPause); }}>{manualPause ? "▶" : "Ⅱ"}</button>
           <button type="button" onClick={() => goToStep(activeIndex - 1)} aria-label="Etapa anterior">←</button>
           <button type="button" onClick={() => goToStep(activeIndex + 1)} aria-label="Etapa siguiente">→</button>
         </div>

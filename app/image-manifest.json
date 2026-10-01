@@ -1,0 +1,336 @@
+{
+  "blog-fuerza.jpg": {
+    "width": 400,
+    "height": 250,
+    "variants": [
+      {
+        "src": "assets/responsive/blog-fuerza-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "blog-mitos.jpg": {
+    "width": 400,
+    "height": 250,
+    "variants": [
+      {
+        "src": "assets/responsive/blog-mitos-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "blog-musculo.jpg": {
+    "width": 400,
+    "height": 250,
+    "variants": [
+      {
+        "src": "assets/responsive/blog-musculo-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "cambio-01.webp": {
+    "width": 718,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "assets/responsive/cambio-01-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/cambio-01-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "cambio-02.webp": {
+    "width": 1280,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "assets/responsive/cambio-02-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/cambio-02-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/cambio-02-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "cambio-03.webp": {
+    "width": 718,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "assets/responsive/cambio-03-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/cambio-03-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "cambio-04.webp": {
+    "width": 1280,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "assets/responsive/cambio-04-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/cambio-04-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/cambio-04-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "cambio-hero.webp": {
+    "width": 1280,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "assets/responsive/cambio-hero-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/cambio-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/cambio-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "comparacion-generada-v2.webp": {
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "assets/responsive/comparacion-generada-v2-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/comparacion-generada-v2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/comparacion-generada-v2-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/responsive/comparacion-generada-v2-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "footer.webp": {
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "src": "assets/responsive/footer-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/footer-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/footer-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/responsive/footer-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "grosz-logo.png": {
+    "width": 612,
+    "height": 383,
+    "variants": [
+      {
+        "src": "assets/responsive/grosz-logo-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "gym.webp": {
+    "width": 1200,
+    "height": 800,
+    "variants": [
+      {
+        "src": "assets/responsive/gym-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/gym-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/gym-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "ideamos-logo.webp": {
+    "width": 870,
+    "height": 213,
+    "variants": [
+      {
+        "src": "assets/responsive/ideamos-logo-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/ideamos-logo-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "poster.webp": {
+    "width": 1600,
+    "height": 893,
+    "variants": [
+      {
+        "src": "assets/responsive/poster-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/poster-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/poster-960.webp",
+        "width": 960
+      },
+      {
+        "src": "assets/responsive/poster-1440.webp",
+        "width": 1440
+      }
+    ]
+  },
+  "resultado-original-01.webp": {
+    "width": 898,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "assets/responsive/resultado-original-01-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/resultado-original-01-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "resultado-original-02.webp": {
+    "width": 898,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "assets/responsive/resultado-original-02-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/resultado-original-02-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "resultado-original-03.webp": {
+    "width": 1200,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "assets/responsive/resultado-original-03-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/resultado-original-03-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/resultado-original-03-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "resultado-original-04.webp": {
+    "width": 898,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "assets/responsive/resultado-original-04-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/resultado-original-04-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "resultado-original-05.webp": {
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "assets/responsive/resultado-original-05-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/resultado-original-05-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/resultado-original-05-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "resultado-original-06.webp": {
+    "width": 1064,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "assets/responsive/resultado-original-06-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/resultado-original-06-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/resultado-original-06-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "resultado-original-07.webp": {
+    "width": 1024,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "assets/responsive/resultado-original-07-320.webp",
+        "width": 320
+      },
+      {
+        "src": "assets/responsive/resultado-original-07-640.webp",
+        "width": 640
+      },
+      {
+        "src": "assets/responsive/resultado-original-07-960.webp",
+        "width": 960
+      }
+    ]
+  }
+}

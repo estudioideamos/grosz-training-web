@@ -4,13 +4,14 @@ import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 
 export const metadata: Metadata = {
+  alternates: { canonical: new URL("contacto/", process.env.SITE_URL || "https://estudioideamos.github.io/grosz-training-web/").href },
   title: "Contacto | Grosz Training",
   description: "Contactá a Grosz Training y encontrá el plan de entrenamiento, alimentación y seguimiento adecuado para tu objetivo.",
 };
 
 export default function ContactoPage() {
   return (
-    <main className="contact-page">
+    <main id="main-content" className="contact-page">
       <SiteHeader subpage />
       <section className="contact-hero">
         <div className="contact-heading">
